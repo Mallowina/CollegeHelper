@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeHelper">
         <activity
-            android:name=".MainActivity"
+            android:name=".Authorisation"
             android:label="@string/app_name"
             android:theme="@style/Theme.CollegeHelper.NoActionBar">
             <intent-filter>
