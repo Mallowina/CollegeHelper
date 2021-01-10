@@ -11,4 +11,18 @@
     <string name="menu_map">Карта</string>
     <string name="menu_event">События</string>
     <string name="menu_schedule">Расписание</string>
+
+
+    <string-array name="ListGroups">
+        <item>1-ИС</item>
+        <item>1-СП</item>
+        <item>1-СА</item>
+        <item>2-ТМС</item>
+        <item>2-TO</item>
+        <item>2-CA</item>
+        <item>3-ИС</item>
+        <item>3-ПСО1</item>
+        <item>3-ПСО2</item>
+        <item>4-ПР1</item>
+    </string-array>
 </resources>
