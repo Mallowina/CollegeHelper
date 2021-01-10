@@ -12,7 +12,6 @@
     <string name="menu_event">События</string>
     <string name="menu_schedule">Расписание</string>
 
-
     <string-array name="ListGroups">
         <item>1-ИС</item>
         <item>1-СП</item>
@@ -25,4 +24,24 @@
         <item>3-ПСО2</item>
         <item>4-ПР1</item>
     </string-array>
+
+    <string-array name="ListMails">
+        <item>@gmail.com</item>
+        <item>@yandex.ru</item>
+        <item>@ya.ru</item>
+        <item>@yandex.com</item>
+        <item>@yandex.ua</item>
+        <item>@yandex.kz</item>
+        <item>@yandex.by</item>
+        <item>@mail.ru</item>
+        <item>@list.ru</item>
+        <item>@inbox.ru</item>
+        <item>@bk.ru</item>
+        <item>@yahoo.com</item>
+        <item>@hotmail.com</item>
+        <item>@outlook.com</item>
+        <item>@internet.ru</item>
+    </string-array>
+
+    <string name="AuthString">Авторизация</string>
 </resources>
