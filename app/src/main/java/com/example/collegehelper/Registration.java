@@ -15,8 +15,7 @@ public class Registration extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().hide();
-        getSupportActionBar().hide();     //Убирает заголовок приложения (некрасивая чтрочка сверху)
+        getSupportActionBar().hide();     //Убирает заголовок приложения (некрасивая cтрочка сверху)
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration);
     }

@@ -1,18 +1,21 @@
 package com.example.collegehelper;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.collegehelper.ui.map.MapFragment;
+import com.example.collegehelper.ui.event.AddEventFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -41,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        /**СКРЫТИЕ ЭЛЕМЕНТА В ШТОРКЕ*/
+//        Menu menu = navigationView.getMenu();
+//        menu.findItem(R.id.nav_schedule).setVisible(false);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -85,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
         TextView textView3 = new TextView(this);
         TextView textView4 = new TextView(this);
 
+        textView.setGravity(Gravity.CENTER_HORIZONTAL);
+        textView2.setGravity(Gravity.CENTER_HORIZONTAL);
+        textView3.setGravity(Gravity.CENTER_HORIZONTAL);
+        textView4.setGravity(Gravity.CENTER_HORIZONTAL);
+
         textView.setText("1 этаж");
         imageview.setImageResource(R.mipmap.floor1);       // Add image path from drawable folder.
         textView2.setText("2 этаж");
@@ -114,6 +127,9 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         TextView textView2 = new TextView(this);
 
+        textView.setGravity(Gravity.CENTER_HORIZONTAL);
+        textView2.setGravity(Gravity.CENTER_HORIZONTAL);
+
         textView.setText("1 этаж");
         imageview.setImageResource(R.mipmap.floor1);       // Add image path from drawable folder.
         textView2.setText("2 этаж");
@@ -135,6 +151,9 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         TextView textView2 = new TextView(this);
 
+        textView.setGravity(Gravity.CENTER_HORIZONTAL);
+        textView2.setGravity(Gravity.CENTER_HORIZONTAL);
+
         textView.setText("Женское общежитие");
         imageview.setImageResource(R.mipmap.floor3);       // Add image path from drawable folder.
         textView2.setText("Мужское общежитие");
@@ -145,4 +164,12 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(textView2);
         linearLayout.addView(imageview2);
     }
+
+    /*КЛАССЫ ДЛЯ РАБОТЫ С СОБЫТИЯМИ*/
+//    public void OpenAddEvent(View view) {
+//        Fragment addEvent = new AddEventFragment();
+//        FragmentTransaction trans=getFragmentManager().beginTransaction();
+//        trans.add(R.id.addEvent, addEvent);
+//        trans.commit();
+//    }
 }

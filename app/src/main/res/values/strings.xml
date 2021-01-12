@@ -43,5 +43,12 @@
         <item>@internet.ru</item>
     </string-array>
 
+    <string-array name="ListEvents">
+        <item>Самостоятельные работы</item>
+        <item>Контрольные работы</item>
+        <item>Мероприятия от колледжа</item>
+        <item>Другое</item>
+    </string-array>
+
     <string name="AuthString">Авторизация</string>
 </resources>

@@ -13,6 +13,7 @@
 
     <fragment
         android:id="@+id/nav_map"
+        android:background="@drawable/gradient"
         android:name="com.example.collegehelper.ui.map.MapFragment"
         android:label="@string/menu_map"
         tools:layout="@layout/fragment_map" />
