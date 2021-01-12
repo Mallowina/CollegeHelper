@@ -13,15 +13,17 @@ public class Authorisation extends AppCompatActivity {
         setContentView(R.layout.autoriz);
 
     }
+
     // Метод обработки нажатия на кнопку
-    public void openmainactivity (View view) {
+    public void openmainactivity(View view) {
         // действия, совершаемые после нажатия на кнопку
         // Создаем объект Intent для вызова новой Activity
         Intent intent = new Intent(Authorisation.this, MainActivity.class);
         // запуск activity
         startActivity(intent);
     }
-    public void openreg (View view) {
+
+    public void openreg(View view) {
         // действия, совершаемые после нажатия на кнопку
         // Создаем объект Intent для вызова новой Activity
         Intent intent = new Intent(Authorisation.this, Registration.class);
