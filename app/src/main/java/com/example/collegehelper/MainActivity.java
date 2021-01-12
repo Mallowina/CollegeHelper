@@ -14,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    /*ДЕЙСТВИЯ ПО КНОПКАМ ИЗ КЛАССА КАРТА*/
+    /**ДЕЙСТВИЯ ПО КНОПКАМ ИЗ КЛАССА КАРТА*/
     public void ShowNewCorp (View view) {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.View);
 
@@ -147,5 +148,12 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(imageview);
         linearLayout.addView(textView2);
         linearLayout.addView(imageview2);
+    }
+    /**ДЕЙСТВИЕ КНОПКИ ИЗ РАСПИСНАИЯ*/
+    public void raspisanie (View view) {
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutt);
+
+        linearLayout.removeAllViews();
+        
     }
 }
