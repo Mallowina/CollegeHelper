@@ -13,20 +13,22 @@
         android:background="@drawable/gradient">
 
         /*ТЕКСТ "РЕГИСТРАЦИЯ"*/
+
         <TextView
             android:id="@+id/txtReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="serif"
             android:text="Регистрация"
             android:textColor="@color/black"
-            android:textSize="36sp"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAuth" />
 
         /*ТЕКСТ "ФАМИЛИЯ"*/
+
         <TextView
             android:id="@+id/txtSurN"
             android:layout_width="wrap_content"
@@ -34,13 +36,14 @@
             android:layout_marginTop="32dp"
             android:text="Фамилия:"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtReg" />
 
         /*ТЕКСТ "ТЕКСТ ИМЯ"*/
+
         <TextView
             android:id="@+id/txtName"
             android:layout_width="wrap_content"
@@ -48,13 +51,14 @@
             android:layout_marginTop="24dp"
             android:text="Имя:"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editSurN" />
 
         /*ТЕКСТ "ОТЧЕСТВО"*/
+
         <TextView
             android:id="@+id/txtLastN"
             android:layout_width="wrap_content"
@@ -62,13 +66,14 @@
             android:layout_marginTop="24dp"
             android:text="Отчество:"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editName" />
 
         /*ТЕКСТ "ГРУППА"*/
+
         <TextView
             android:id="@+id/txtGroup"
             android:layout_width="wrap_content"
@@ -76,13 +81,14 @@
             android:layout_marginTop="24dp"
             android:text="Группа:"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editLastN" />
 
         /*ТЕКСТ "ПОЧТА"*/
+
         <TextView
             android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
@@ -90,13 +96,14 @@
             android:layout_marginTop="24dp"
             android:text="E-mail:"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerGroup" />
 
         /*ТЕКСТ "ЛОГИН"*/
+
         <TextView
             android:id="@+id/txtLogin"
             android:layout_width="wrap_content"
@@ -104,13 +111,14 @@
             android:layout_marginTop="32dp"
             android:text="Логин:"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editEmail" />
 
         /*ТЕКСТ "ПАРОЛЬ"*/
+
         <TextView
             android:id="@+id/txtPassword"
             android:layout_width="wrap_content"
@@ -118,19 +126,21 @@
             android:layout_marginTop="24dp"
             android:text="Пароль:"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editLogin" />
 
         /*EDIT "фАМИЛИЯ"*/
+
         <EditText
             android:id="@+id/editSurN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
+            android:hint="Иванов"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
@@ -138,12 +148,14 @@
             app:layout_constraintTop_toBottomOf="@+id/txtSurN" />
 
         /*EDIT "ИМЯ"*/
+
         <EditText
             android:id="@+id/editName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
+            android:hint="Иван"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
@@ -151,12 +163,14 @@
             app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
         /*EDIT "ОТЧЕСТВО"*/
+
         <EditText
             android:id="@+id/editLastN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
+            android:hint="Иванович"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
@@ -189,6 +203,18 @@
             app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
         /*EDIT "ЛОГИН"*/
+
+        <Spinner
+            android:id="@+id/spinnerMail"
+            android:layout_width="158dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="588dp"
+            android:entries="@array/ListMails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/editEmail"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <EditText
             android:id="@+id/editLogin"
             android:layout_width="wrap_content"
@@ -229,29 +255,34 @@
             app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
         /*КНОПКА РЕГИСТРАЦИИ*/
+
         <Button
             android:id="@+id/btnReg"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="Registration"
             android:text="Зарегестрироваться"
-            android:onClick="OpenMainActivity"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editPassword2" />
 
         /*КНОПКА ВОЗВРАТА НА АВТОРИЗАЦИЮ*/
+
         <Button
             android:id="@+id/btnAuth"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:layout_width="144dp"
             android:layout_height="47dp"
             android:layout_marginTop="16dp"
-            android:text="Авторизация"
-            android:textColor="#000000"
-            android:textSize="10sp"
             android:onClick="OpenAuthorization"
+            android:text="@string/AuthString"
+            android:textColor="#000000"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.94"
             app:layout_constraintStart_toStartOf="parent"

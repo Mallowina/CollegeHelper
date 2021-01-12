@@ -1,5 +1,6 @@
 package com.example.collegehelper.ui.map;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.collegehelper.Authorisation;
 import com.example.collegehelper.R;
 
 public class MapFragment extends Fragment {
@@ -23,13 +25,10 @@ public class MapFragment extends Fragment {
         mapViewModel =
                 new ViewModelProvider(this).get(MapViewModel.class);
         View root = inflater.inflate(R.layout.fragment_map, container, false);
-        final TextView textView = root.findViewById(R.id.text_map);
-        mapViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
+    }
+
+    public void ShowNewCorp (View view) {
+
     }
 }

@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
+import com.example.collegehelper.ui.map.MapFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -47,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
     }
 
     @Override
@@ -63,4 +69,83 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+
+
+
+
+    /*ДЕЙСТВИЯ ПО КНОПКАМ ИЗ КЛАССА КАРТА*/
+    public void ShowNewCorp (View view) {
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.View);
+
+        linearLayout.removeAllViews();
+
+        ImageView imageview = new ImageView(this);
+        ImageView imageview2 = new ImageView(this);
+        ImageView imageview3 = new ImageView(this);
+        ImageView imageview4 = new ImageView(this);
+        TextView textView = new TextView(this);
+        TextView textView2 = new TextView(this);
+        TextView textView3 = new TextView(this);
+        TextView textView4 = new TextView(this);
+
+        textView.setText("1 этаж");
+        imageview.setImageResource(R.mipmap.floor1);       // Add image path from drawable folder.
+        textView2.setText("2 этаж");
+        imageview2.setImageResource(R.mipmap.floor2);       // Add image path from drawable folder.
+        textView3.setText("3 этаж");
+        imageview3.setImageResource(R.mipmap.floor3);       // Add image path from drawable folder.
+        textView4.setText("4 этаж");
+        imageview4.setImageResource(R.mipmap.floor4);       // Add image path from drawable folder.
+
+        linearLayout.addView(textView);
+        linearLayout.addView(imageview);
+        linearLayout.addView(textView2);
+        linearLayout.addView(imageview2);
+        linearLayout.addView(textView3);
+        linearLayout.addView(imageview3);
+        linearLayout.addView(textView4);
+        linearLayout.addView(imageview4);
+    }
+
+    public void ShowOldCorp (View view) {
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.View);
+
+        linearLayout.removeAllViews();
+
+        ImageView imageview = new ImageView(this);
+        ImageView imageview2 = new ImageView(this);
+        TextView textView = new TextView(this);
+        TextView textView2 = new TextView(this);
+
+        textView.setText("1 этаж");
+        imageview.setImageResource(R.mipmap.floor1);       // Add image path from drawable folder.
+        textView2.setText("2 этаж");
+        imageview2.setImageResource(R.mipmap.floor2);       // Add image path from drawable folder.
+
+        linearLayout.addView(textView);
+        linearLayout.addView(imageview);
+        linearLayout.addView(textView2);
+        linearLayout.addView(imageview2);
+    }
+
+    public void ShowJanks (View view) {
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.View);
+
+        linearLayout.removeAllViews();
+
+        ImageView imageview = new ImageView(this);
+        ImageView imageview2 = new ImageView(this);
+        TextView textView = new TextView(this);
+        TextView textView2 = new TextView(this);
+
+        textView.setText("Женское общежитие");
+        imageview.setImageResource(R.mipmap.floor3);       // Add image path from drawable folder.
+        textView2.setText("Мужское общежитие");
+        imageview2.setImageResource(R.mipmap.floor4);       // Add image path from drawable folder.
+
+        linearLayout.addView(textView);
+        linearLayout.addView(imageview);
+        linearLayout.addView(textView2);
+        linearLayout.addView(imageview2);
+    }
 }
