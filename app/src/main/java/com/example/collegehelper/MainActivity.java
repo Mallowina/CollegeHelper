@@ -149,11 +149,17 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(textView2);
         linearLayout.addView(imageview2);
     }
-    /**ДЕЙСТВИЕ КНОПКИ ИЗ РАСПИСНАИЯ*/
+    /**ДЕЙСТВИЕ КНОПКИ ОСНОВНОГО РАСПИСНАИЯ*/
     public void raspisanie (View view) {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutt);
-
-        linearLayout.removeAllViews();
-        
+        LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.layoutt1);
+        linearLayout.setVisibility(View.VISIBLE);
+        linearLayout1.setVisibility(View.INVISIBLE);
+    }
+    public  void ismen (View view){
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutt);
+        LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.layoutt1);
+        linearLayout1.setVisibility(View.VISIBLE);
+        linearLayout.setVisibility(View.INVISIBLE);
     }
 }
