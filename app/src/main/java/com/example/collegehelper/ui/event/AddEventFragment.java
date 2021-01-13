@@ -21,7 +21,7 @@ import com.example.collegehelper.R;
 
 public class AddEventFragment extends Fragment {
 
-    private EventViewModel eventViewModel;
+
 
     private Button button1;
     private View root;
@@ -29,8 +29,7 @@ public class AddEventFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        eventViewModel =
-//                new ViewModelProvider(this).get(EventViewModel.class);
+
         root = inflater.inflate(R.layout.fragment_add_event, container, false);
 
         /*Действия по выбору Курс/Группы */
