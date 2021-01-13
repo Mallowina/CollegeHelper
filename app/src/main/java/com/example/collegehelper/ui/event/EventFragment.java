@@ -59,11 +59,12 @@ public class EventFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Fragment addEvent = new AddEventFragment();
-        FragmentTransaction trans=getFragmentManager().beginTransaction();
-        trans.replace(R.id.event, addEvent);
-        trans.addToBackStack(null);
-        trans.commit();
-        button1.setVisibility(View.INVISIBLE);
+
+            Fragment addEvent = new AddEventFragment();
+            FragmentTransaction trans = getFragmentManager().beginTransaction();
+            trans.replace(R.id.event, addEvent);
+            trans.addToBackStack(null);
+            trans.commit();
+            button1.setVisibility(View.INVISIBLE);
     }
 }
