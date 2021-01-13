@@ -100,7 +100,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerGroupRegistration" />
 
         /*ТЕКСТ "ЛОГИН"*/
 
@@ -179,7 +179,7 @@
 
         /*СПИСОК ГРУПП*/
         <Spinner
-            android:id="@+id/spinnerGroup"
+            android:id="@+id/spinnerGroupRegistration"
             android:layout_width="109dp"
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
@@ -205,7 +205,7 @@
         /*EDIT "ЛОГИН"*/
 
         <Spinner
-            android:id="@+id/spinnerMail"
+            android:id="@+id/spinnerMailRegistration"
             android:layout_width="158dp"
             android:layout_height="37dp"
             android:layout_marginTop="588dp"

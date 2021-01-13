@@ -1,10 +1,8 @@
 package com.example.collegehelper;
 
-import android.app.AppComponentFactory;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -39,7 +37,7 @@ public class Registration extends AppCompatActivity {
         Surname = editSurN.getText().toString();
         EditText editLastN = (EditText) findViewById(R.id.editLastN);
         LastName = editLastN.getText().toString();
-        Spinner spinnerGroup = (Spinner) findViewById(R.id.spinnerGroup);
+        Spinner spinnerGroup = (Spinner) findViewById(R.id.spinnerGroupRegistration);
         Group = spinnerGroup.getSelectedItem().toString();
         EditText editMail = (EditText) findViewById(R.id.editEmail);
         Email = editMail.getText().toString();
