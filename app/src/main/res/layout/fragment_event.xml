@@ -8,31 +8,6 @@
     android:id="@+id/event"
     tools:context=".ui.event.EventFragment" >
 
-    <Spinner
-        android:id="@+id/spinnerEvents"
-        android:layout_width="266dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="56dp"
-        android:entries="@array/ListEvents"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.634"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
-        android:layout_width="311dp"
-        android:layout_height="417dp"
-
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerEvents"
-        app:layout_constraintVertical_bias="0.151" />
-
     <Button
         android:id="@+id/btnAddEvent"
         android:layout_width="wrap_content"

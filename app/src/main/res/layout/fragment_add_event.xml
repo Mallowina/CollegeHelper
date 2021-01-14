@@ -84,7 +84,7 @@
             app:layout_constraintTop_toBottomOf="@+id/spinnerEventAddEvent" />
 
         <CalendarView
-            android:id="@+id/calendarView"
+            android:id="@+id/dateEvent"
             android:layout_width="316dp"
             android:layout_height="217dp"
             android:layout_marginTop="8dp"
@@ -106,10 +106,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.145"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+            app:layout_constraintTop_toBottomOf="@+id/dateEvent" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/descriptionEvent"
             android:layout_width="304dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -156,7 +156,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.952"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+            app:layout_constraintTop_toBottomOf="@+id/descriptionEvent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
