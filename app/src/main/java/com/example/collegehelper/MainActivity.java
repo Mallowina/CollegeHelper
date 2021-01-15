@@ -1,37 +1,26 @@
 package com.example.collegehelper;
 
-import android.app.FragmentTransaction;
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.example.collegehelper.ui.event.AddEventFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +36,6 @@ public class MainActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
 //            }
 //        });
-
-
-
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -68,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
     }
 
     @Override
@@ -84,11 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-
-
-
-
-    /*ДЕЙСТВИЯ ПО КНОПКАМ ИЗ КЛАССА КАРТА*/
+    /**ДЕЙСТВИЯ ПО КНОПКАМ ИЗ КЛАССА КАРТА*/
     public void ShowNewCorp (View view) {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.View);
 
@@ -175,6 +159,17 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(imageview2);
     }
 
-    /*КЛАССЫ ДЛЯ РАБОТЫ С СОБЫТИЯМИ*/
-
+    /**ДЕЙСТВИЕ КНОПКИ ОСНОВНОГО РАСПИСНАИЯ*/
+    public void raspisanie (View view) {
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutt);
+        LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.layoutt1);
+        linearLayout.setVisibility(View.VISIBLE);
+        linearLayout1.setVisibility(View.INVISIBLE);
+    }
+    public  void ismen (View view){
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutt);
+        LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.layoutt1);
+        linearLayout1.setVisibility(View.VISIBLE);
+        linearLayout.setVisibility(View.INVISIBLE);
+    }
 }

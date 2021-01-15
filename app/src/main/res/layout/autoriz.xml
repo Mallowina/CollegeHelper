@@ -11,7 +11,7 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="140dp"
         android:layout_height="55dp"
-        android:onClick="openmainactivity"
+        android:onClick="Authorisation"
         android:text="Войти"
         android:textColor="#000000"
         android:textSize="17sp"
@@ -61,7 +61,7 @@
         android:text="Логин :"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBottom_toTopOf="@+id/editLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
         app:layout_constraintVertical_bias="0.932" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/editPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="108dp"
@@ -100,7 +100,7 @@
         android:text="Пароль :"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/editPassword2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent" />
