@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import java.io.IOException;
 
 public class WorkWithData {
+    /**/
+    public static String UserType="";
+
+
     public static boolean checkLetter (String word) {
         if (word.matches("^[a-zA-Z0-9]*$")) {
             return false;

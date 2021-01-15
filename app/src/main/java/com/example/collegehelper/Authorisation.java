@@ -7,10 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.collegehelper.WorkWithData;
-import com.example.collegehelper.ui.event.EventConstructor;
-
 import static com.example.collegehelper.WorkWithData.mDb;
+import static com.example.collegehelper.WorkWithData.UserType;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +16,7 @@ public class Authorisation extends AppCompatActivity {
     private String Login, Password;
     private String CurrentLogin=""; // название
     private String CurrentPassword="";
-    private String UserType="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +86,8 @@ public class Authorisation extends AppCompatActivity {
         }
     }
 
+
+    /*ФУНКЦИЯ ПРОВЕРКИ ЛОГИНА И ПАРОЛЯ*/
     private boolean isEquals() {
         Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
         cursor.moveToFirst();
