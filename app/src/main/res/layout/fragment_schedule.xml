@@ -54,7 +54,7 @@
             android:layout_marginTop="38dp"
             android:layout_marginEnd="16dp"
             android:orientation="vertical"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ismen">
@@ -759,8 +759,11 @@
             android:id="@+id/layoutt1"
             android:layout_width="366dp"
             android:layout_height="300dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="16dp"
             android:orientation="vertical"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ismen">
@@ -800,7 +803,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView90"
+                        android:id="@+id/aa1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -820,7 +823,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView88"
+                        android:id="@+id/aa2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -840,7 +843,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView86"
+                        android:id="@+id/aa3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -860,7 +863,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView85"
+                        android:id="@+id/aa4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -880,7 +883,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView83"
+                        android:id="@+id/aa5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -900,7 +903,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView81"
+                        android:id="@+id/aa6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -937,7 +940,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView77"
+                        android:id="@+id/bb1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -957,7 +960,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView47"
+                        android:id="@+id/bb2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -977,7 +980,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView54"
+                        android:id="@+id/bb3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -997,7 +1000,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView68"
+                        android:id="@+id/bb4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -1017,7 +1020,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView75"
+                        android:id="@+id/bb5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
@@ -1038,7 +1041,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView95"
+                        android:id="@+id/bb6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений" />
