@@ -34,11 +34,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rasp" />
 
+
+        <Spinner
+            android:id="@+id/spinnerGroupRegistration"
+            android:layout_width="109dp"
+            android:layout_height="30dp"
+            android:entries="@array/ListGroups"
+            app:layout_constraintBottom_toTopOf="@+id/layoutt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ismen"
+            app:layout_constraintVertical_bias="0.0" />
+
         <LinearLayout
             android:id="@+id/layoutt"
             android:layout_width="367dp"
             android:layout_height="762dp"
             android:layout_marginStart="50dp"
+            android:layout_marginTop="38dp"
             android:layout_marginEnd="16dp"
             android:orientation="vertical"
             android:visibility="visible"
@@ -58,7 +71,7 @@
                     android:gravity="center_horizontal">
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/txtMonday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Понедельник"
@@ -82,7 +95,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView40"
+                        android:id="@+id/a1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -101,7 +114,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView73"
+                        android:id="@+id/a2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -121,7 +134,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView72"
+                        android:id="@+id/a3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -141,7 +154,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView71"
+                        android:id="@+id/a4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -161,7 +174,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView70"
+                        android:id="@+id/a5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -181,7 +194,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView69"
+                        android:id="@+id/a6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -195,7 +208,7 @@
                     android:gravity="center_horizontal">
 
                     <TextView
-                        android:id="@+id/textView15"
+                        android:id="@+id/txtTuesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -219,7 +232,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView67"
+                        android:id="@+id/b1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -239,7 +252,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView66"
+                        android:id="@+id/b2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -259,7 +272,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView65"
+                        android:id="@+id/b3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -279,7 +292,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView64"
+                        android:id="@+id/b4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -299,7 +312,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView63"
+                        android:id="@+id/b5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -319,7 +332,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView62"
+                        android:id="@+id/b6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -333,7 +346,7 @@
                     android:gravity="center|center_horizontal">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/txtWednesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -357,7 +370,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView60"
+                        android:id="@+id/c1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -377,7 +390,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView59"
+                        android:id="@+id/c2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -397,7 +410,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView58"
+                        android:id="@+id/c3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -417,7 +430,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView57"
+                        android:id="@+id/c4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -437,7 +450,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView56"
+                        android:id="@+id/c5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -457,7 +470,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView55"
+                        android:id="@+id/c6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -471,7 +484,7 @@
                     android:gravity="center_horizontal">
 
                     <TextView
-                        android:id="@+id/textView39"
+                        android:id="@+id/txtThursday"
                         android:layout_width="89dp"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -495,7 +508,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView53"
+                        android:id="@+id/d1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -515,7 +528,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView52"
+                        android:id="@+id/d2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -535,7 +548,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView51"
+                        android:id="@+id/d3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -555,7 +568,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView50"
+                        android:id="@+id/d4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -575,7 +588,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView49"
+                        android:id="@+id/d5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -595,7 +608,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView48"
+                        android:id="@+id/d6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -609,7 +622,7 @@
                     android:gravity="center_horizontal">
 
                     <TextView
-                        android:id="@+id/textView32"
+                        android:id="@+id/txtFriday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -633,7 +646,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView46"
+                        android:id="@+id/e1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -653,7 +666,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView45"
+                        android:id="@+id/e2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -673,7 +686,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView44"
+                        android:id="@+id/e3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -693,7 +706,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView43"
+                        android:id="@+id/e4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -713,7 +726,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView42"
+                        android:id="@+id/e5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -733,7 +746,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView41"
+                        android:id="@+id/e6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -747,7 +760,7 @@
             android:layout_width="366dp"
             android:layout_height="300dp"
             android:orientation="vertical"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ismen">
