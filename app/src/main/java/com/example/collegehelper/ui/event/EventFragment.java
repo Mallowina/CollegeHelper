@@ -51,8 +51,6 @@ public class EventFragment extends Fragment {
             }
         });
 
-
-
         return root;
     }
 
