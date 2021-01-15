@@ -34,11 +34,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rasp" />
 
+
+        <Spinner
+            android:id="@+id/spinnerGroupRegistration"
+            android:layout_width="109dp"
+            android:layout_height="30dp"
+            android:entries="@array/ListGroups"
+            app:layout_constraintBottom_toTopOf="@+id/layoutt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ismen"
+            app:layout_constraintVertical_bias="0.0" />
+
         <LinearLayout
             android:id="@+id/layoutt"
             android:layout_width="367dp"
             android:layout_height="762dp"
             android:layout_marginStart="50dp"
+            android:layout_marginTop="38dp"
             android:layout_marginEnd="16dp"
             android:orientation="vertical"
             android:visibility="visible"
