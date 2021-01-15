@@ -9,6 +9,12 @@ import java.io.IOException;
 public class WorkWithData {
     /**/
     public static String UserType="";
+    public static String ID="";
+    public static String NAME="";           //Имя вошедшего
+    public static String SURNAME="";        //Фамилия вошедшего
+    public static String SECOND_NAME="";        //Отчество вошедшего
+    public static String GROUP_NAME="";
+    public static String EMAIL="";
 
 
     public static boolean checkLetter (String word) {

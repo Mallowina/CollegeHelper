@@ -7,8 +7,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.example.collegehelper.WorkWithData.EMAIL;
+import static com.example.collegehelper.WorkWithData.GROUP_NAME;
+import static com.example.collegehelper.WorkWithData.NAME;
+import static com.example.collegehelper.WorkWithData.SECOND_NAME;
+import static com.example.collegehelper.WorkWithData.SURNAME;
 import static com.example.collegehelper.WorkWithData.mDb;
 import static com.example.collegehelper.WorkWithData.UserType;
+import static com.example.collegehelper.WorkWithData.ID;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -79,6 +85,7 @@ public class Authorisation extends AppCompatActivity {
 
 
         if (openActivity == 0) {
+            getUser();
             // Создаем объект Intent для вызова новой Activity
             Intent intent = new Intent(this, MainActivity.class);
             // запуск activity
@@ -92,7 +99,7 @@ public class Authorisation extends AppCompatActivity {
         Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-
+                ID = cursor.getString(0);
                 CurrentLogin = cursor.getString(1);
                 CurrentPassword = cursor.getString(2);
                 UserType = cursor.getString(3);
@@ -100,11 +107,50 @@ public class Authorisation extends AppCompatActivity {
                 if (CurrentLogin.equals(Login) && CurrentPassword.equals(Password)) {
                     return true;
                 } else cursor.moveToNext();
-
-
         }
         cursor.close();
         return false;
     }
 
+    private void getUser() {
+        switch (UserType) {
+            case "1": {
+                Cursor cursor = mDb.rawQuery("SELECT * FROM student_info", null);
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    if (ID.equals(cursor.getString(0))) {
+                        NAME=cursor.getString(1);
+                        SURNAME=cursor.getString(2);
+                        SECOND_NAME=cursor.getString(3);
+                        GROUP_NAME=cursor.getString(4);
+                        EMAIL=cursor.getString(5);
+                        return;
+                    } else cursor.moveToNext();
+                }
+                cursor.close();
+                break;
+            }
+            case "2": {
+                Cursor cursor = mDb.rawQuery("SELECT * FROM prepods_info", null);
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    if (ID.equals(cursor.getString(0))) {
+                        NAME=cursor.getString(1);
+                        SURNAME=cursor.getString(2);
+                        SECOND_NAME=cursor.getString(3);
+                        EMAIL=cursor.getString(4);
+                        return;
+                    } else cursor.moveToNext();
+                }
+                cursor.close();
+                break;
+            }
+            case "3": {break;}
+            default: {
+                Toast.makeText(getApplicationContext(),
+                        "Невозможно определить тип пользователя",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 }
