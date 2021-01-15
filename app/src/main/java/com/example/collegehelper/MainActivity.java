@@ -1,6 +1,7 @@
 package com.example.collegehelper;
 
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -18,6 +19,9 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.collegehelper.WorkWithData.GROUP_NAME;
+import static com.example.collegehelper.WorkWithData.mDb;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -26,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //        FloatingActionButton fab = findViewById(R.id.fab);
@@ -159,17 +165,6 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(imageview2);
     }
 
-    /**ДЕЙСТВИЕ КНОПКИ ОСНОВНОГО РАСПИСНАИЯ*/
-    public void raspisanie (View view) {
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutt);
-        LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.layoutt1);
-        linearLayout.setVisibility(View.VISIBLE);
-        linearLayout1.setVisibility(View.INVISIBLE);
-    }
-    public  void ismen (View view){
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutt);
-        LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.layoutt1);
-        linearLayout1.setVisibility(View.VISIBLE);
-        linearLayout.setVisibility(View.INVISIBLE);
-    }
+
+
 }

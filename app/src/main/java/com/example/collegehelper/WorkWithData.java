@@ -1,20 +1,22 @@
 package com.example.collegehelper;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import java.io.IOException;
 
 public class WorkWithData {
     /**/
-    public static String UserType="";
-    public static String ID="";
-    public static String NAME="";           //Имя вошедшего
-    public static String SURNAME="";        //Фамилия вошедшего
-    public static String SECOND_NAME="";        //Отчество вошедшего
-    public static String GROUP_NAME="";
-    public static String EMAIL="";
+    public static String UserType;
+    public static String ID;
+    public static String NAME;           //Имя вошедшего
+    public static String SURNAME;        //Фамилия вошедшего
+    public static String SECOND_NAME;        //Отчество вошедшего
+    public static String GROUP_NAME;
+    public static String EMAIL;
 
 
     public static boolean checkLetter (String word) {
@@ -67,6 +69,43 @@ public class WorkWithData {
             mDb = mDBHelper.getWritableDatabase();
         } catch (SQLException mSQLException) {
             throw mSQLException;
+        }
+    }
+
+    public static void getUser() {
+        switch (UserType) {
+            case "1": {
+                Cursor cursor = mDb.rawQuery("SELECT * FROM student_info", null);
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    if (ID.equals(cursor.getString(0))) {
+                        NAME = cursor.getString(1);
+                        SURNAME = cursor.getString(2);
+                        SECOND_NAME = cursor.getString(3);
+                        GROUP_NAME = cursor.getString(4);
+                        EMAIL = cursor.getString(5);
+
+                        return;
+                    } else cursor.moveToNext();
+                }
+                cursor.close();
+                break;
+            }
+            case "2": {
+                Cursor cursor = mDb.rawQuery("SELECT * FROM prepods_info", null);
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    if (ID.equals(cursor.getString(0))) {
+                        NAME = cursor.getString(1);
+                        SURNAME = cursor.getString(2);
+                        SECOND_NAME = cursor.getString(3);
+                        EMAIL = cursor.getString(4);
+                        return;
+                    } else cursor.moveToNext();
+                }
+                cursor.close();
+                break;
+            }
         }
     }
 }
