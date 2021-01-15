@@ -9,8 +9,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.collegehelper.R;
-import com.example.collegehelper.StateAdapter;
-import com.example.collegehelper.ui.event.EventConstructorAdapter;
 
 import java.util.List;
 
