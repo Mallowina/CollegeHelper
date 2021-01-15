@@ -4,14 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class StateAdapter  extends RecyclerView.Adapter<StateAdapter.ViewHolder>{
+public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder>{
 
     private final LayoutInflater inflater;
     private final List<State> states;
@@ -45,7 +44,7 @@ public class StateAdapter  extends RecyclerView.Adapter<StateAdapter.ViewHolder>
         ViewHolder(View view){
             super(view);
             nameView = (TextView) view.findViewById(R.id.name);
-            capitalView = (TextView) view.findViewById(R.id.capital);
+            capitalView = (TextView) view.findViewById(R.id.desc);
         }
     }
 }
