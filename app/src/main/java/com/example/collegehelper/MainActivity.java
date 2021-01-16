@@ -1,6 +1,7 @@
 package com.example.collegehelper;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.collegehelper.ui.schedule.ScheduleFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -171,5 +173,10 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.layoutt1);
         linearLayout1.setVisibility(View.VISIBLE);
         linearLayout.setVisibility(View.INVISIBLE);
+    }
+    /**Кнопка перехода на изменение расписнаия*/
+    public void teacher (View view){
+        Intent intent = new Intent(this, ScheduleFragment.class);
+        startActivity(intent);
     }
 }

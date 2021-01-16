@@ -15,46 +15,43 @@
         tools:context=".ui.schedule.ScheduleFragment">
 
         <Button
-            android:id="@+id/rasp"
+            android:id="@+id/raspp"
             android:layout_width="374dp"
             android:layout_height="42dp"
-            android:onClick="raspisanie"
+            android:onClick="raspisaniee"
             android:text="Основное расписание"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <Button
-            android:id="@+id/ismen"
+            android:id="@+id/ismenn"
             android:layout_width="372dp"
             android:layout_height="40dp"
-            android:onClick="ismen"
+            android:onClick="ismenn"
             android:text="Изменения в расписании"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rasp" />
-
+            app:layout_constraintTop_toBottomOf="@+id/raspp" />
 
         <Spinner
             android:id="@+id/spinnerGroupRegistration"
             android:layout_width="109dp"
             android:layout_height="30dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:entries="@array/ListGroups"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintHorizontal_bias="0.291"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ismen" />
+            app:layout_constraintTop_toBottomOf="@+id/ismenn" />
 
         <LinearLayout
             android:id="@+id/layoutt"
-            android:layout_width="379dp"
+            android:layout_width="367dp"
             android:layout_height="762dp"
-            android:layout_marginTop="34dp"
             android:orientation="vertical"
-            android:visibility="visible"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGroupRegistration"
-            tools:layout_editor_absoluteX="21dp">
+            android:visibility="gone">
 
             <TableLayout
                 android:id="@+id/table"
@@ -754,16 +751,12 @@
 
         <LinearLayout
             android:id="@+id/layoutt1"
-            android:layout_width="373dp"
-            android:layout_height="404dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="38dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="379dp"
+            android:layout_height="461dp"
             android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ismen">
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="136dp">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -799,11 +792,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/aa1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -819,11 +813,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/aa2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -839,11 +834,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/aa3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -859,11 +855,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/aa4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -879,11 +876,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/aa5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -899,11 +897,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/aa6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -936,11 +935,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/bb1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -956,11 +956,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/bb2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -976,11 +977,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/bb3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -996,11 +998,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/bb4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -1016,11 +1019,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/bb5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -1037,26 +1041,26 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/bb6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
             </TableLayout>
         </LinearLayout>
 
         <Button
-            android:id="@+id/teacher"
+            android:id="@+id/isme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:onClick="teacher"
-            android:text="Изменить расписание "
+            android:onClick="isme"
+            android:text="Изменить"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/spinnerGroupRegistration"
-            app:layout_constraintTop_toBottomOf="@+id/ismen" />
+            app:layout_constraintHorizontal_bias="0.67"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ismenn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

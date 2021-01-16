@@ -22,7 +22,7 @@ public class ScheduleFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         scheduleViewModel =
                 new ViewModelProvider(this).get(ScheduleViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_schedule, container, false);
+        View root = inflater.inflate(R.layout.fragment_schedule_teacher, container, false);
 
         return root;
     }
