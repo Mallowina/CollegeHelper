@@ -16,7 +16,7 @@ import com.example.collegehelper.R;
 
 public class ScheduleFragment extends Fragment {
 
-    private ScheduleViewModel scheduleViewModel;
+    public ScheduleViewModel scheduleViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

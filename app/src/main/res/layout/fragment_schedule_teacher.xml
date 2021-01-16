@@ -48,15 +48,18 @@
 
         <LinearLayout
             android:id="@+id/layoutt"
-            android:layout_width="367dp"
-            android:layout_height="762dp"
+            android:layout_width="376dp"
+            android:layout_height="1209dp"
+            android:layout_marginTop="140dp"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TableLayout
                 android:id="@+id/table"
                 android:layout_width="372dp"
-                android:layout_height="765dp">
+                android:layout_height="1520dp">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -88,11 +91,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/a1"
+                    <EditText
+                        android:id="@+id/as1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
                 </TableRow>
 
                 <TableRow
@@ -107,11 +111,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/a2"
+                    <EditText
+                        android:id="@+id/as2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -127,11 +132,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/a3"
+                    <EditText
+                        android:id="@+id/as3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -147,11 +153,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/a4"
+                    <EditText
+                        android:id="@+id/as4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -167,11 +174,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/a5"
+                    <EditText
+                        android:id="@+id/as5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -187,11 +195,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/a6"
+                    <EditText
+                        android:id="@+id/as6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -225,11 +234,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/b1"
+                    <EditText
+                        android:id="@+id/bn1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -245,11 +255,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/b2"
+                    <EditText
+                        android:id="@+id/bn2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -265,11 +276,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/b3"
+                    <EditText
+                        android:id="@+id/bn3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -285,11 +297,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/b4"
+                    <EditText
+                        android:id="@+id/bn4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -305,11 +318,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/b5"
+                    <EditText
+                        android:id="@+id/bn5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -325,11 +339,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/b6"
+                    <EditText
+                        android:id="@+id/bn6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -363,11 +378,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/c1"
+                    <EditText
+                        android:id="@+id/cv1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -383,11 +399,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/c2"
+                    <EditText
+                        android:id="@+id/cv2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -403,11 +420,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/c3"
+                    <EditText
+                        android:id="@+id/cv3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -423,11 +441,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/c4"
+                    <EditText
+                        android:id="@+id/cv4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -443,11 +462,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/c5"
+                    <EditText
+                        android:id="@+id/cv5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -463,11 +483,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/c6"
+                    <EditText
+                        android:id="@+id/cv6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -501,11 +522,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/d1"
+                    <EditText
+                        android:id="@+id/df1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -521,11 +543,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/d2"
+                    <EditText
+                        android:id="@+id/df2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -541,11 +564,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/d3"
+                    <EditText
+                        android:id="@+id/df3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -561,11 +585,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/d4"
+                    <EditText
+                        android:id="@+id/df4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -582,7 +607,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/d5"
+                        android:id="@+id/df5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Математика" />
@@ -601,11 +626,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/d6"
+                    <EditText
+                        android:id="@+id/df6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -639,11 +665,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/e1"
+                    <EditText
+                        android:id="@+id/er1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -659,11 +686,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/e2"
+                    <EditText
+                        android:id="@+id/er2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -679,11 +707,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/e3"
+                    <EditText
+                        android:id="@+id/er3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -699,11 +728,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/e4"
+                    <EditText
+                        android:id="@+id/er4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -719,11 +749,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/e5"
+                    <EditText
+                        android:id="@+id/er5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -739,11 +770,12 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/e6"
+                    <EditText
+                        android:id="@+id/er6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Математика" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
             </TableLayout>
@@ -751,11 +783,11 @@
 
         <LinearLayout
             android:id="@+id/layoutt1"
-            android:layout_width="379dp"
-            android:layout_height="461dp"
+            android:layout_width="385dp"
+            android:layout_height="553dp"
             android:orientation="vertical"
-            android:visibility="visible"
-            tools:layout_editor_absoluteX="26dp"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="20dp"
             tools:layout_editor_absoluteY="136dp">
 
             <TableLayout
@@ -767,15 +799,12 @@
                     android:layout_height="match_parent"
                     android:gravity="center|center_vertical">
 
-                    <TextView
-                        android:id="@+id/textView93"
+                    <EditText
+                        android:id="@+id/aas1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="На сегодня"
-                        android:textAllCaps="false"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        android:textStyle="bold|italic" />
+                        android:text=""
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -793,7 +822,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/aa1"
+                        android:id="@+id/aas1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -814,7 +843,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/aa2"
+                        android:id="@+id/aas2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -835,7 +864,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/aa3"
+                        android:id="@+id/aas3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -856,7 +885,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/aa4"
+                        android:id="@+id/aas4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -877,7 +906,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/aa5"
+                        android:id="@+id/aas5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -898,7 +927,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/aa6"
+                        android:id="@+id/aas6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -910,15 +939,12 @@
                     android:layout_height="match_parent"
                     android:gravity="center|center_vertical">
 
-                    <TextView
-                        android:id="@+id/textView80"
+                    <EditText
+                        android:id="@+id/bb1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="На завтра"
-                        android:textAllCaps="false"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        android:textStyle="bold|italic" />
+                        android:text="Нет изменений"
+                        android:textSize="10sp" />
 
                 </TableRow>
 
@@ -936,7 +962,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/bb1"
+                        android:id="@+id/bbf1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -957,7 +983,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/bb2"
+                        android:id="@+id/bbf2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -978,7 +1004,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/bb3"
+                        android:id="@+id/bbf3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -999,7 +1025,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/bb4"
+                        android:id="@+id/bbf4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -1020,7 +1046,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/bb5"
+                        android:id="@+id/bbf5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -1042,7 +1068,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/bb6"
+                        android:id="@+id/bbf6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Нет изменений"
@@ -1058,6 +1084,7 @@
             android:layout_height="wrap_content"
             android:onClick="isme"
             android:text="Изменить"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.67"
             app:layout_constraintStart_toStartOf="parent"
