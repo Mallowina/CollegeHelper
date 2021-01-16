@@ -16,6 +16,7 @@ public class WorkWithData {
     public static String SURNAME;        //Фамилия вошедшего
     public static String SECOND_NAME;        //Отчество вошедшего
     public static String GROUP_NAME;
+    public static String COURSE_NAME;
     public static String EMAIL;
 
 
@@ -84,7 +85,7 @@ public class WorkWithData {
                         SECOND_NAME = cursor.getString(3);
                         GROUP_NAME = cursor.getString(4);
                         EMAIL = cursor.getString(5);
-
+                        COURSE_NAME = GROUP_NAME.substring(0,1);
                         return;
                     } else cursor.moveToNext();
                 }
@@ -107,5 +108,18 @@ public class WorkWithData {
                 break;
             }
         }
+    }
+
+
+    public static String getCourseName() {
+        return COURSE_NAME;
+    }
+    public static String getGroupName() {
+        return GROUP_NAME;
+    }
+
+    public static String firstUpperCase(String word){
+        if(word == null || word.isEmpty()) return "";//или return word;
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
     }
 }

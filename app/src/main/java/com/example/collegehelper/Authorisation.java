@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.example.collegehelper.WorkWithData.COURSE_NAME;
 import static com.example.collegehelper.WorkWithData.EMAIL;
 import static com.example.collegehelper.WorkWithData.GROUP_NAME;
 import static com.example.collegehelper.WorkWithData.NAME;
@@ -89,7 +90,7 @@ public class Authorisation extends AppCompatActivity {
 
 
             Toast.makeText(getApplicationContext(),
-                    "You " + ID + NAME + SURNAME + SECOND_NAME + GROUP_NAME + EMAIL,
+                    "You " + ID + NAME + SURNAME + SECOND_NAME+ COURSE_NAME + GROUP_NAME + EMAIL,
                     Toast.LENGTH_SHORT).show();
 
             // Создаем объект Intent для вызова новой Activity

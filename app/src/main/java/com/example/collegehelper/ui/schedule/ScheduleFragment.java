@@ -14,14 +14,23 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import static com.example.collegehelper.WorkWithData.COURSE_NAME;
+import static com.example.collegehelper.WorkWithData.EMAIL;
 import static com.example.collegehelper.WorkWithData.GROUP_NAME;
 import static com.example.collegehelper.WorkWithData.ID;
+import static com.example.collegehelper.WorkWithData.NAME;
+import static com.example.collegehelper.WorkWithData.SECOND_NAME;
+import static com.example.collegehelper.WorkWithData.SURNAME;
 import static com.example.collegehelper.WorkWithData.UserType;
+import static com.example.collegehelper.WorkWithData.firstUpperCase;
 import static com.example.collegehelper.WorkWithData.mDb;
 
 import com.example.collegehelper.MainActivity;
 import com.example.collegehelper.R;
 import com.example.collegehelper.WorkWithData;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ScheduleFragment extends Fragment {
 
@@ -34,6 +43,7 @@ public class ScheduleFragment extends Fragment {
         WorkWithData.ConnectToDB(this.getContext());
 
         setMainSchedule();
+        setChangeSchedule();
 
         Button main_schedule = root.findViewById(R.id.rasp);
         main_schedule.setOnClickListener(new View.OnClickListener() {
@@ -43,9 +53,6 @@ public class ScheduleFragment extends Fragment {
                 LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layoutt1);
                 linearLayout.setVisibility(View.VISIBLE);
                 linearLayout1.setVisibility(View.INVISIBLE);
-
-
-
             }
         });
 
@@ -163,6 +170,113 @@ public class ScheduleFragment extends Fragment {
                 }
             }
 
+            cursor.moveToNext();
+        }
+        cursor.close();
+    }
+
+
+    private void setChangeSchedule() {
+        // TextView для основного расписания
+        TextView txtTod1 = root.findViewById(R.id.txtTod1);
+        TextView txtTod2 = root.findViewById(R.id.txtTod2);
+        TextView txtTod3 = root.findViewById(R.id.txtTod3);
+        TextView txtTod4 = root.findViewById(R.id.txtTod4);
+        TextView txtTod5 = root.findViewById(R.id.txtTod5);
+        TextView txtTod6 = root.findViewById(R.id.txtTod6);
+
+        TextView txtTom1 = root.findViewById(R.id.txtTom1);
+        TextView txtTom2 = root.findViewById(R.id.txtTom2);
+        TextView txtTom3 = root.findViewById(R.id.txtTom3);
+        TextView txtTom4 = root.findViewById(R.id.txtTom4);
+        TextView txtTom5 = root.findViewById(R.id.txtTom5);
+        TextView txtTom6 = root.findViewById(R.id.txtTom6);
+
+        TextView txtTod = root.findViewById(R.id.txtTod);
+        TextView txtTom = root.findViewById(R.id.txtNextDay);
+
+        String today, next_day;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = new Date();
+        today = firstUpperCase(sdf.format(d));
+
+        switch (today) {
+            case "Понедельник": next_day="Вторник"; break;
+            case "Вторник":next_day="Среда"; break;
+            case "Среда":next_day="Четверг"; break;
+            case "Четверг":next_day="Пятница"; break;
+            case "Пятница":next_day="Понедельник"; break;
+            default: {
+                today = "Понедельник";
+                next_day="Вторник";
+                break;
+            }
+        }
+
+        Cursor cursor = mDb.rawQuery("SELECT * FROM changeschendule", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            if (GROUP_NAME.equals(cursor.getString(0))) {
+                if (cursor.getString(1).equals(today)) {
+                    txtTod.setText(today);
+                    switch (cursor.getString(2)) {
+                        case "1": {
+                            txtTod1.setText(cursor.getString(3));
+                            break;
+                        }
+                        case "2": {
+                            txtTod2.setText(cursor.getString(3));
+                            break;
+                        }
+                        case "3": {
+                            txtTod3.setText(cursor.getString(3));
+                            break;
+                        }
+                        case "4": {
+                            txtTod4.setText(cursor.getString(3));
+                            break;
+                        }
+                        case "5": {
+                            txtTod5.setText(cursor.getString(3));
+                            break;
+                        }
+                        case "6": {
+                            txtTod6.setText(cursor.getString(3));
+                            break;
+                        }
+                    }
+                }
+            }
+            if (cursor.getString(1).equals(next_day)) {
+                txtTom.setText(next_day);
+                switch (cursor.getString(2)) {
+                    case "1": {
+                        txtTom1.setText(cursor.getString(3));
+                        break;
+                    }
+                    case "2": {
+                        txtTom2.setText(cursor.getString(3));
+                        break;
+                    }
+                    case "3": {
+                        txtTom3.setText(cursor.getString(3));
+                        break;
+                    }
+                    case "4": {
+                        txtTom4.setText(cursor.getString(3));
+                        break;
+                    }
+                    case "5": {
+                        txtTom5.setText(cursor.getString(3));
+                        break;
+                    }
+                    case "6": {
+                        txtTom6.setText(cursor.getString(3));
+                        break;
+                    }
+                }
+            }
             cursor.moveToNext();
         }
         cursor.close();
