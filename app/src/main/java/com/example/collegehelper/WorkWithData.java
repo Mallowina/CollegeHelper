@@ -1,20 +1,23 @@
 package com.example.collegehelper;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import java.io.IOException;
 
 public class WorkWithData {
     /**/
-    public static String UserType="";
-    public static String ID="";
-    public static String NAME="";           //Имя вошедшего
-    public static String SURNAME="";        //Фамилия вошедшего
-    public static String SECOND_NAME="";        //Отчество вошедшего
-    public static String GROUP_NAME="";
-    public static String EMAIL="";
+    public static String UserType;
+    public static String ID;
+    public static String NAME;           //Имя вошедшего
+    public static String SURNAME;        //Фамилия вошедшего
+    public static String SECOND_NAME;        //Отчество вошедшего
+    public static String GROUP_NAME;
+    public static String COURSE_NAME;
+    public static String EMAIL;
 
 
     public static boolean checkLetter (String word) {
@@ -68,5 +71,55 @@ public class WorkWithData {
         } catch (SQLException mSQLException) {
             throw mSQLException;
         }
+    }
+
+    public static void getUser() {
+        switch (UserType) {
+            case "1": {
+                Cursor cursor = mDb.rawQuery("SELECT * FROM student_info", null);
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    if (ID.equals(cursor.getString(0))) {
+                        NAME = cursor.getString(1);
+                        SURNAME = cursor.getString(2);
+                        SECOND_NAME = cursor.getString(3);
+                        GROUP_NAME = cursor.getString(4);
+                        EMAIL = cursor.getString(5);
+                        COURSE_NAME = GROUP_NAME.substring(0,1);
+                        return;
+                    } else cursor.moveToNext();
+                }
+                cursor.close();
+                break;
+            }
+            case "2": {
+                Cursor cursor = mDb.rawQuery("SELECT * FROM prepods_info", null);
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    if (ID.equals(cursor.getString(0))) {
+                        NAME = cursor.getString(1);
+                        SURNAME = cursor.getString(2);
+                        SECOND_NAME = cursor.getString(3);
+                        EMAIL = cursor.getString(4);
+                        return;
+                    } else cursor.moveToNext();
+                }
+                cursor.close();
+                break;
+            }
+        }
+    }
+
+
+    public static String getCourseName() {
+        return COURSE_NAME;
+    }
+    public static String getGroupName() {
+        return GROUP_NAME;
+    }
+
+    public static String firstUpperCase(String word){
+        if(word == null || word.isEmpty()) return "";//или return word;
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
     }
 }

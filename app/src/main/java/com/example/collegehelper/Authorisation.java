@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.example.collegehelper.WorkWithData.COURSE_NAME;
 import static com.example.collegehelper.WorkWithData.EMAIL;
 import static com.example.collegehelper.WorkWithData.GROUP_NAME;
 import static com.example.collegehelper.WorkWithData.NAME;
 import static com.example.collegehelper.WorkWithData.SECOND_NAME;
 import static com.example.collegehelper.WorkWithData.SURNAME;
-import static com.example.collegehelper.WorkWithData.mDb;
 import static com.example.collegehelper.WorkWithData.UserType;
+import static com.example.collegehelper.WorkWithData.mDb;
 import static com.example.collegehelper.WorkWithData.ID;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -75,9 +76,9 @@ public class Authorisation extends AppCompatActivity {
 
                     if (isEquals()) {               //Проверка на одинаковые логин и пароль
                         openActivity=0;
-                        Toast.makeText(getApplicationContext(),
-                                "Вы успешно вошли. Ваш тип" + UserType,
-                                Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getApplicationContext(),
+//                                "Вы успешно вошли. Ваш тип" + UserType,
+//                                Toast.LENGTH_SHORT).show();
                     }
                     else openActivity++;
                 }
@@ -85,12 +86,19 @@ public class Authorisation extends AppCompatActivity {
 
 
         if (openActivity == 0) {
-            getUser();
+            WorkWithData.getUser();
+
+
+            Toast.makeText(getApplicationContext(),
+                    "You " + ID + NAME + SURNAME + SECOND_NAME+ COURSE_NAME + GROUP_NAME + EMAIL,
+                    Toast.LENGTH_SHORT).show();
+
             // Создаем объект Intent для вызова новой Activity
             Intent intent = new Intent(this, MainActivity.class);
             // запуск activity
             startActivity(intent);
         }
+
     }
 
 
@@ -110,47 +118,5 @@ public class Authorisation extends AppCompatActivity {
         }
         cursor.close();
         return false;
-    }
-
-    private void getUser() {
-        switch (UserType) {
-            case "1": {
-                Cursor cursor = mDb.rawQuery("SELECT * FROM student_info", null);
-                cursor.moveToFirst();
-                while (!cursor.isAfterLast()) {
-                    if (ID.equals(cursor.getString(0))) {
-                        NAME=cursor.getString(1);
-                        SURNAME=cursor.getString(2);
-                        SECOND_NAME=cursor.getString(3);
-                        GROUP_NAME=cursor.getString(4);
-                        EMAIL=cursor.getString(5);
-                        return;
-                    } else cursor.moveToNext();
-                }
-                cursor.close();
-                break;
-            }
-            case "2": {
-                Cursor cursor = mDb.rawQuery("SELECT * FROM prepods_info", null);
-                cursor.moveToFirst();
-                while (!cursor.isAfterLast()) {
-                    if (ID.equals(cursor.getString(0))) {
-                        NAME=cursor.getString(1);
-                        SURNAME=cursor.getString(2);
-                        SECOND_NAME=cursor.getString(3);
-                        EMAIL=cursor.getString(4);
-                        return;
-                    } else cursor.moveToNext();
-                }
-                cursor.close();
-                break;
-            }
-            case "3": {break;}
-            default: {
-                Toast.makeText(getApplicationContext(),
-                        "Невозможно определить тип пользователя",
-                        Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 }
