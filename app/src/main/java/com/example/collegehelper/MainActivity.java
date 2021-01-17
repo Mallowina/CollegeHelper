@@ -1,7 +1,6 @@
 package com.example.collegehelper;
 
-
-import android.database.Cursor;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.collegehelper.ui.schedule.ScheduleFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -18,9 +18,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
-import static com.example.collegehelper.WorkWithData.GROUP_NAME;
-import static com.example.collegehelper.WorkWithData.mDb;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -165,6 +162,10 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(imageview2);
     }
 
-
-
+    /**ДЕЙСТВИЕ КНОПКИ ОСНОВНОГО РАСПИСНАИЯ*/
+    /**Кнопка перехода на изменение расписнаия*/
+    public void teacher (View view){
+        Intent intent = new Intent(this, ScheduleFragment.class);
+        startActivity(intent);
+    }
 }

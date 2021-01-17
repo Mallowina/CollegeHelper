@@ -7,21 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import static com.example.collegehelper.WorkWithData.COURSE_NAME;
-import static com.example.collegehelper.WorkWithData.EMAIL;
 import static com.example.collegehelper.WorkWithData.GROUP_NAME;
-import static com.example.collegehelper.WorkWithData.ID;
-import static com.example.collegehelper.WorkWithData.NAME;
-import static com.example.collegehelper.WorkWithData.SECOND_NAME;
-import static com.example.collegehelper.WorkWithData.SURNAME;
-import static com.example.collegehelper.WorkWithData.UserType;
 import static com.example.collegehelper.WorkWithData.firstUpperCase;
 import static com.example.collegehelper.WorkWithData.mDb;
 
@@ -33,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScheduleFragment extends Fragment {
+
 
     private View root;
 
