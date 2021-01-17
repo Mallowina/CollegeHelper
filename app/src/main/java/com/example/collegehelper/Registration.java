@@ -3,6 +3,7 @@ package com.example.collegehelper;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -140,7 +141,9 @@ public class Registration extends AppCompatActivity {
     public void addUser() {
         WorkWithData.ConnectToDB(this);
 
-        String last_id = getLastID();
+        mDb.beginTransaction();
+
+        int last_id = getLastID();
 
 // Создайте новую строку со значениями для вставки.
         ContentValues registrationValues = new ContentValues();
@@ -149,7 +152,7 @@ public class Registration extends AppCompatActivity {
         registrationValues.put("id", last_id);
         registrationValues.put("login", Login);
         registrationValues.put("password", Password);
-        registrationValues.put("user_type", "1");
+        registrationValues.put("user_type", 1);
 
         infoPeopleValues.put("id", last_id);
         infoPeopleValues.put("name", Name);
@@ -158,7 +161,30 @@ public class Registration extends AppCompatActivity {
         infoPeopleValues.put("group_name", Group);
         infoPeopleValues.put("email", Email);
 // Вставьте строку в вашу базу данных.
-        mDb.insert("users_info", null, registrationValues);
-        mDb.insert("student_info", null, infoPeopleValues);
+        long newRowId = mDb.insert("users_info", null, registrationValues);
+        long newRowId2 =mDb.insert("student_info", null, infoPeopleValues);
+
+        mDb.setTransactionSuccessful();
+        mDb.endTransaction();
+        mDb.close();
+
+        if (newRowId == -1) {
+            // Если ID  -1, значит произошла ошибка
+            Toast.makeText(this, "Ошибка при заведении гостя", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Гость заведён под номером: " + newRowId, Toast.LENGTH_SHORT).show();
+        }
+
+        if (newRowId2 == -1) {
+            // Если ID  -1, значит произошла ошибка
+            Toast.makeText(this, "Ошибка при заведении гостя", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Гость заведён под номером: " + newRowId, Toast.LENGTH_SHORT).show();
+        }
+
+
+
+     //   DatabaseHelper.DB_VERSION += 1;
+     //   mDb.close();
     }
 }
