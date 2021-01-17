@@ -110,8 +110,6 @@ public class EventActionFragment extends Fragment {
                 group_name = cursor.getString(4);
                 course_name = cursor.getString(5);
 
-
-
                 Toast.makeText(getContext(),
                         now_course_name + course_name + "\n"
                                 +now_group_name+group_name,

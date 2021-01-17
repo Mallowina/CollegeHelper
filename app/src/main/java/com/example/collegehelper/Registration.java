@@ -1,13 +1,20 @@
 package com.example.collegehelper;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.collegehelper.WorkWithData;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import static com.example.collegehelper.WorkWithData.getLastID;
+import static com.example.collegehelper.WorkWithData.mDb;
 
 public class Registration extends AppCompatActivity {
 
@@ -25,10 +32,10 @@ public class Registration extends AppCompatActivity {
         // запуск activity
         startActivity(intent);
     }
-
-    public void Registration (View view) {
+    private String Name, Surname, LastName, Group, Email, Login, Password, Password2;
+    public void Registration (View view) throws Exception {
         int openActivity = 0;
-        String Name, Surname, LastName, Group, Email, Login, Password, Password2;
+
 
         /**ПОЛУЧЕНИЕ ДАННЫХ В ПЕРЕМЕННЫЕ*/
         EditText editName = (EditText) findViewById(R.id.editName);
@@ -40,6 +47,7 @@ public class Registration extends AppCompatActivity {
         Spinner spinnerGroup = (Spinner) findViewById(R.id.spinnerGroupRegistration);
         Group = spinnerGroup.getSelectedItem().toString();
         EditText editMail = (EditText) findViewById(R.id.editEmail);
+        Spinner spinnerMail=(Spinner) findViewById(R.id.spinnerMailRegistration);
         Email = editMail.getText().toString();
         EditText editLogin = (EditText) findViewById(R.id.editLogin);
         Login = editLogin.getText().toString();
@@ -118,10 +126,39 @@ public class Registration extends AppCompatActivity {
         }
 
         if (openActivity == 0) {
+            Password = WorkWithData.byteArrayToHexString(WorkWithData.computeHash(Password));
+            Email += spinnerMail.getSelectedItem().toString();
+            addUser();
             // Создаем объект Intent для вызова новой Activity
             Intent intent = new Intent(this, Authorisation.class);
             // запуск activity
             startActivity(intent);
         }
+    }
+
+    /**Запись пользователя в БД*/
+    public void addUser() {
+        WorkWithData.ConnectToDB(this);
+
+        String last_id = getLastID();
+
+// Создайте новую строку со значениями для вставки.
+        ContentValues registrationValues = new ContentValues();
+        ContentValues infoPeopleValues = new ContentValues();
+// Задайте значения для каждой строки.
+        registrationValues.put("id", last_id);
+        registrationValues.put("login", Login);
+        registrationValues.put("password", Password);
+        registrationValues.put("user_type", "1");
+
+        infoPeopleValues.put("id", last_id);
+        infoPeopleValues.put("name", Name);
+        infoPeopleValues.put("surname", Surname);
+        infoPeopleValues.put("second_name", LastName);
+        infoPeopleValues.put("group_name", Group);
+        infoPeopleValues.put("email", Email);
+// Вставьте строку в вашу базу данных.
+        mDb.insert("users_info", null, registrationValues);
+        mDb.insert("student_info", null, infoPeopleValues);
     }
 }

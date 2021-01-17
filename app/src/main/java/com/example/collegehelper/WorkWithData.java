@@ -110,6 +110,14 @@ public class WorkWithData {
         }
     }
 
+    public static String getLastID() {
+
+        Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
+        cursor.moveToLast();
+        int last_id=Integer.parseInt(cursor.getString(0))+1;
+        cursor.close();
+        return Integer.toString(last_id);
+    }
 
     public static String getCourseName() {
         return COURSE_NAME;

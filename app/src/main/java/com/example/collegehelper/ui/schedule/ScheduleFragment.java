@@ -16,7 +16,6 @@ import static com.example.collegehelper.WorkWithData.GROUP_NAME;
 import static com.example.collegehelper.WorkWithData.firstUpperCase;
 import static com.example.collegehelper.WorkWithData.mDb;
 
-import com.example.collegehelper.MainActivity;
 import com.example.collegehelper.R;
 import com.example.collegehelper.WorkWithData;
 
@@ -24,7 +23,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScheduleFragment extends Fragment {
-
 
     private View root;
 
@@ -41,8 +39,8 @@ public class ScheduleFragment extends Fragment {
         main_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layoutt);
-                LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layoutt1);
+                LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layout);
+                LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layout1);
                 linearLayout.setVisibility(View.VISIBLE);
                 linearLayout1.setVisibility(View.INVISIBLE);
             }
@@ -52,8 +50,8 @@ public class ScheduleFragment extends Fragment {
         change_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layoutt);
-                LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layoutt1);
+                LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layout);
+                LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layout1);
                 linearLayout1.setVisibility(View.VISIBLE);
                 linearLayout.setVisibility(View.INVISIBLE);
             }

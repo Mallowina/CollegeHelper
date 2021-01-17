@@ -5,20 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".ui.schedule.ScheduleFragment">
-    android:layout_height="match_parent">
+    tools:context=".ui.schedule.ScheduleTeacherFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/gradient"
-        tools:context=".ui.schedule.ScheduleFragment">
+        tools:context=".ui.schedule.ScheduleTeacherFragment">
 
         <Button
             android:id="@+id/raspp"
             android:layout_width="374dp"
             android:layout_height="42dp"
-            android:onClick="raspisaniee"
             android:text="Основное расписание"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +27,6 @@
             android:id="@+id/ismenn"
             android:layout_width="372dp"
             android:layout_height="40dp"
-            android:onClick="ismenn"
             android:text="Изменения в расписании"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
