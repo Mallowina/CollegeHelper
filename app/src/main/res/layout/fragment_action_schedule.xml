@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".ui.schedule.ScheduleTeacherFragment">
+    tools:context=".ui.schedule.ScheduleActionFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.schedule.ScheduleTeacherFragment">
+        tools:context=".ui.schedule.ScheduleActionFragment">
 
         <Button
-            android:id="@+id/raspp"
+            android:id="@+id/rasp"
             android:layout_width="374dp"
             android:layout_height="42dp"
             android:layout_marginTop="55dp"
@@ -22,43 +22,45 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <Button
-            android:id="@+id/ismenn"
+            android:id="@+id/ismen"
             android:layout_width="372dp"
             android:layout_height="40dp"
             android:text="Изменения в расписании"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/raspp" />
+            app:layout_constraintTop_toBottomOf="@+id/rasp" />
+
 
         <Spinner
             android:id="@+id/spinnerGroupRegistration"
             android:layout_width="109dp"
             android:layout_height="30dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:entries="@array/ListGroups"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.089"
+            app:layout_constraintHorizontal_bias="0.111"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ismenn" />
+            app:layout_constraintTop_toBottomOf="@+id/ismen" />
 
         <LinearLayout
-            android:id="@+id/layoutt"
-            android:layout_width="376dp"
-            android:layout_height="1209dp"
-            android:layout_marginTop="8dp"
+            android:id="@+id/layout"
+            android:layout_width="379dp"
+            android:layout_height="762dp"
+            android:layout_marginTop="34dp"
             android:layout_marginBottom="50dp"
             android:orientation="vertical"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGroupRegistration">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ismen">
+
 
             <TableLayout
                 android:id="@+id/table"
                 android:layout_width="372dp"
-                android:layout_height="1520dp">
+                android:layout_height="765dp">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -90,12 +92,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/as1"
+                    <TextView
+                        android:id="@+id/a1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -110,12 +110,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/as2"
+                    <TextView
+                        android:id="@+id/a2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -131,12 +129,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/as3"
+                    <TextView
+                        android:id="@+id/a3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -152,12 +148,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/as4"
+                    <TextView
+                        android:id="@+id/a4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -173,12 +167,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/as5"
+                    <TextView
+                        android:id="@+id/a5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="match_parent" />
 
                 </TableRow>
 
@@ -194,12 +186,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/as6"
+                    <TextView
+                        android:id="@+id/a6"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -215,7 +205,6 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="     Вторник"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textSize="18sp"
                         android:textStyle="bold|italic" />
@@ -233,12 +222,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/bn1"
+                    <TextView
+                        android:id="@+id/b1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -254,12 +241,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/bn2"
+                    <TextView
+                        android:id="@+id/b2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -275,12 +260,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/bn3"
+                    <TextView
+                        android:id="@+id/b3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -296,12 +279,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/bn4"
+                    <TextView
+                        android:id="@+id/b4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -317,12 +298,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/bn5"
+                    <TextView
+                        android:id="@+id/b5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -338,12 +317,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/bn6"
+                    <TextView
+                        android:id="@+id/b6"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -359,7 +336,6 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="      Среда"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textSize="18sp"
                         android:textStyle="bold|italic" />
@@ -377,12 +353,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/cv1"
+                    <TextView
+                        android:id="@+id/c1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -398,12 +372,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/cv2"
+                    <TextView
+                        android:id="@+id/c2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -419,12 +391,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/cv3"
+                    <TextView
+                        android:id="@+id/c3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -440,12 +410,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/cv4"
+                    <TextView
+                        android:id="@+id/c4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -461,12 +429,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/cv5"
+                    <TextView
+                        android:id="@+id/c5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -482,12 +448,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/cv6"
+                    <TextView
+                        android:id="@+id/c6"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -503,7 +467,6 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="     Четверг"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textSize="18sp"
                         android:textStyle="bold|italic" />
@@ -521,12 +484,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/df1"
+                    <TextView
+                        android:id="@+id/d1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -542,12 +503,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/df2"
+                    <TextView
+                        android:id="@+id/d2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -563,12 +522,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/df3"
+                    <TextView
+                        android:id="@+id/d3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -584,12 +541,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/df4"
+                    <TextView
+                        android:id="@+id/d4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -605,12 +560,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/df5"
+                    <TextView
+                        android:id="@+id/d5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -626,12 +579,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/df6"
+                    <TextView
+                        android:id="@+id/d6"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -647,7 +598,6 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="    Пятница"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textSize="18sp"
                         android:textStyle="bold|italic" />
@@ -665,12 +615,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/er1"
+                    <TextView
+                        android:id="@+id/e1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -686,12 +634,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/er2"
+                    <TextView
+                        android:id="@+id/e2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -707,12 +653,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/er3"
+                    <TextView
+                        android:id="@+id/e3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -728,12 +672,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/er4"
+                    <TextView
+                        android:id="@+id/e4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -749,12 +691,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/er5"
+                    <TextView
+                        android:id="@+id/e5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -770,28 +710,27 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/er6"
+                    <TextView
+                        android:id="@+id/e6"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
             </TableLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layoutt1"
+            android:id="@+id/layout1"
             android:layout_width="373dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="16dp"
             android:orientation="vertical"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGroupRegistration">
+            app:layout_constraintTop_toBottomOf="@+id/ismen">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -802,12 +741,15 @@
                     android:layout_height="match_parent"
                     android:gravity="center|center_vertical">
 
-                    <EditText
-                        android:id="@+id/AddTod"
+                    <TextView
+                        android:id="@+id/txtTod"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" Нет изменений"
-                        android:textSize="10sp" />
+                        android:text="На сегодня"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold|italic" />
 
                 </TableRow>
 
@@ -824,12 +766,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTod1"
+                    <TextView
+                        android:id="@+id/txtTod1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -845,12 +785,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTod2"
+                    <TextView
+                        android:id="@+id/txtTod2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -866,12 +804,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTod3"
+                    <TextView
+                        android:id="@+id/txtTod3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -887,12 +823,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTod4"
+                    <TextView
+                        android:id="@+id/txtTod4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -908,12 +842,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTod5"
+                    <TextView
+                        android:id="@+id/txtTod5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -929,12 +861,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTod6"
+                    <TextView
+                        android:id="@+id/txtTod6"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -942,12 +872,15 @@
                     android:layout_height="match_parent"
                     android:gravity="center|center_vertical">
 
-                    <EditText
-                        android:id="@+id/addTom"
+                    <TextView
+                        android:id="@+id/txtNextDay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:text="На завтра"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold|italic" />
 
                 </TableRow>
 
@@ -964,12 +897,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTom1"
+                    <TextView
+                        android:id="@+id/txtTom1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -985,12 +916,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTom2"
+                    <TextView
+                        android:id="@+id/txtTom2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -1006,12 +935,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTom3"
+                    <TextView
+                        android:id="@+id/txtTom3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -1027,12 +954,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTom4"
+                    <TextView
+                        android:id="@+id/txtTom4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
 
                 <TableRow
@@ -1048,12 +973,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTom5"
+                    <TextView
+                        android:id="@+id/txtTom5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
@@ -1070,12 +993,10 @@
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/addTom6"
+                    <TextView
+                        android:id="@+id/txtTom6"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Нет изменений"
-                        android:textSize="10sp" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
             </TableLayout>

@@ -26,7 +26,7 @@ public class ScheduleTeacherFragment extends Fragment {
                 LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layoutt);
                 LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layoutt1);
                 linearLayout.setVisibility(View.VISIBLE);
-                linearLayout1.setVisibility(View.INVISIBLE);
+                linearLayout1.setVisibility(View.GONE);
             }
         });
 
@@ -37,7 +37,7 @@ public class ScheduleTeacherFragment extends Fragment {
                 LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layoutt);
                 LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layoutt1);
                 linearLayout1.setVisibility(View.VISIBLE);
-                linearLayout.setVisibility(View.INVISIBLE);
+                linearLayout.setVisibility(View.GONE);
             }
         });
 

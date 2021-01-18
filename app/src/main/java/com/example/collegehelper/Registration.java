@@ -3,16 +3,19 @@ package com.example.collegehelper;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.collegehelper.WorkWithData;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.example.collegehelper.WorkWithData.mDBHelper;
+import static com.example.collegehelper.WorkWithData.getLastID;
+import static com.example.collegehelper.WorkWithData.mDb;
 
 public class Registration extends AppCompatActivity {
 
@@ -56,13 +59,13 @@ public class Registration extends AppCompatActivity {
 
         /**ПРОВЕРКА ПУСТЫХ СТРОК*/
         if (Name.isEmpty()
-        || Surname.isEmpty()
-        || LastName.isEmpty()
-        || Group.isEmpty()
-        || Email.isEmpty()
-        || Login.isEmpty()
-        || Password.isEmpty()
-        || Password2.isEmpty()) {
+                || Surname.isEmpty()
+                || LastName.isEmpty()
+                || Group.isEmpty()
+                || Email.isEmpty()
+                || Login.isEmpty()
+                || Password.isEmpty()
+                || Password2.isEmpty()) {
             Toast.makeText(getApplicationContext(),
                     "Поля не должны быть пустыми.",
                     Toast.LENGTH_SHORT).show();
@@ -111,16 +114,13 @@ public class Registration extends AppCompatActivity {
                 } else {
                     openActivity = 0;
 
-                    if (WorkWithData.isExist(Login)) openActivity++;
+                    /**ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ*/
+                    if (Password.equals(Password2)) openActivity = 0;
                     else {
-                        /**ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ*/
-                        if (Password.equals(Password2)) openActivity = 0;
-                        else {
-                            openActivity++;
-                            Toast.makeText(getApplicationContext(),
-                                    "Пароли должны совпадать",
-                                    Toast.LENGTH_SHORT).show();
-                        }
+                        openActivity++;
+                        Toast.makeText(getApplicationContext(),
+                                "Пароли должны совпадать",
+                                Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -141,14 +141,50 @@ public class Registration extends AppCompatActivity {
     public void addUser() {
         WorkWithData.ConnectToDB(this);
 
-        boolean isInserted =   mDBHelper.insertUsersInfo(Login, Password);
-        boolean isInserted2 =   mDBHelper.insertStudentInfo(Name, Surname, LastName, Group, Email);
+        mDb.beginTransaction();
+
+        int last_id = getLastID();
+
+// Создайте новую строку со значениями для вставки.
+        ContentValues registrationValues = new ContentValues();
+        ContentValues infoPeopleValues = new ContentValues();
+// Задайте значения для каждой строки.
+        registrationValues.put("id", last_id);
+        registrationValues.put("login", Login);
+        registrationValues.put("password", Password);
+        registrationValues.put("user_type", 1);
+
+        infoPeopleValues.put("id", last_id);
+        infoPeopleValues.put("name", Name);
+        infoPeopleValues.put("surname", Surname);
+        infoPeopleValues.put("second_name", LastName);
+        infoPeopleValues.put("group_name", Group);
+        infoPeopleValues.put("email", Email);
+// Вставьте строку в вашу базу данных.
+        long newRowId = mDb.insert("users_info", null, registrationValues);
+        long newRowId2 =mDb.insert("student_info", null, infoPeopleValues);
+
+        mDb.setTransactionSuccessful();
+        mDb.endTransaction();
+        mDb.close();
+
+        if (newRowId == -1) {
+            // Если ID  -1, значит произошла ошибка
+            Toast.makeText(this, "Ошибка при заведении гостя", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Гость заведён под номером: " + newRowId, Toast.LENGTH_SHORT).show();
+        }
+
+        if (newRowId2 == -1) {
+            // Если ID  -1, значит произошла ошибка
+            Toast.makeText(this, "Ошибка при заведении гостя", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Гость заведён под номером: " + newRowId, Toast.LENGTH_SHORT).show();
+        }
 
 
-        if((isInserted = true) && (isInserted2 = true))
-            Toast.makeText(this,"Data successfully inserted.",Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(this,"Data not successfully inserted.",Toast.LENGTH_LONG).show();
 
+        //   DatabaseHelper.DB_VERSION += 1;
+        //   mDb.close();
     }
 }
