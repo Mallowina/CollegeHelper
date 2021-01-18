@@ -1,6 +1,7 @@
 package com.example.collegehelper;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -19,6 +20,10 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.collegehelper.WorkWithData.NAME;
+import static com.example.collegehelper.WorkWithData.SECOND_NAME;
+import static com.example.collegehelper.WorkWithData.SURNAME;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -28,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Resources res = getResources();
+        String fio = SURNAME+" "+NAME+" "+SECOND_NAME;
+        String text = getString(R.string.nav_header_title, fio);
+        TextView textView = (TextView) findViewById(R.id.viewFIO);
+        textView.setText(text);
 
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);

@@ -1,10 +1,12 @@
 package com.example.collegehelper;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.example.collegehelper.WorkWithData.COURSE_NAME;
@@ -92,6 +94,8 @@ public class Authorisation extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),
                     "You " + ID + NAME + SURNAME + SECOND_NAME+ COURSE_NAME + GROUP_NAME + EMAIL,
                     Toast.LENGTH_SHORT).show();
+
+
 
             // Создаем объект Intent для вызова новой Activity
             Intent intent = new Intent(this, MainActivity.class);

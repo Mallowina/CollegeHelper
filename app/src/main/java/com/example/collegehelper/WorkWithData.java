@@ -53,10 +53,10 @@ public class WorkWithData {
     }
 
     public static SQLiteDatabase mDb;
+    public static DatabaseHelper mDBHelper;   //Переменная для работы с БД
 
     public static void ConnectToDB(Context context) {
-        //Переменная для работы с БД
-        DatabaseHelper mDBHelper;
+
 
         mDBHelper = new DatabaseHelper(context);
 
@@ -110,14 +110,22 @@ public class WorkWithData {
         }
     }
 
-    public static String getLastID() {
-
+    /*ФУНКЦИЯ ПРОВЕРКИ СУЩЕСТВУЮЩЕГО ЛОГИНА*/
+    public static boolean isExist (String Login) {
+        String ExistLogin;
         Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
-        cursor.moveToLast();
-        int last_id=Integer.parseInt(cursor.getString(0))+1;
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            ExistLogin = cursor.getString(1);
+
+            if (ExistLogin.equals(Login)) {
+                return true;
+            } else cursor.moveToNext();
+        }
         cursor.close();
-        return Integer.toString(last_id);
+        return false;
     }
+
 
     public static String getCourseName() {
         return COURSE_NAME;

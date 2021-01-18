@@ -9,12 +9,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.collegehelper.WorkWithData;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.example.collegehelper.WorkWithData.getLastID;
-import static com.example.collegehelper.WorkWithData.mDb;
+import static com.example.collegehelper.WorkWithData.mDBHelper;
 
 public class Registration extends AppCompatActivity {
 
@@ -113,13 +111,16 @@ public class Registration extends AppCompatActivity {
                 } else {
                     openActivity = 0;
 
-                    /**ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ*/
-                    if (Password.equals(Password2)) openActivity = 0;
+                    if (WorkWithData.isExist(Login)) openActivity++;
                     else {
-                        openActivity++;
-                        Toast.makeText(getApplicationContext(),
-                                "Пароли должны совпадать",
-                                Toast.LENGTH_SHORT).show();
+                        /**ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ*/
+                        if (Password.equals(Password2)) openActivity = 0;
+                        else {
+                            openActivity++;
+                            Toast.makeText(getApplicationContext(),
+                                    "Пароли должны совпадать",
+                                    Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             }
@@ -140,25 +141,14 @@ public class Registration extends AppCompatActivity {
     public void addUser() {
         WorkWithData.ConnectToDB(this);
 
-        String last_id = getLastID();
+        boolean isInserted =   mDBHelper.insertUsersInfo(Login, Password);
+        boolean isInserted2 =   mDBHelper.insertStudentInfo(Name, Surname, LastName, Group, Email);
 
-// Создайте новую строку со значениями для вставки.
-        ContentValues registrationValues = new ContentValues();
-        ContentValues infoPeopleValues = new ContentValues();
-// Задайте значения для каждой строки.
-        registrationValues.put("id", last_id);
-        registrationValues.put("login", Login);
-        registrationValues.put("password", Password);
-        registrationValues.put("user_type", "1");
 
-        infoPeopleValues.put("id", last_id);
-        infoPeopleValues.put("name", Name);
-        infoPeopleValues.put("surname", Surname);
-        infoPeopleValues.put("second_name", LastName);
-        infoPeopleValues.put("group_name", Group);
-        infoPeopleValues.put("email", Email);
-// Вставьте строку в вашу базу данных.
-        mDb.insert("users_info", null, registrationValues);
-        mDb.insert("student_info", null, infoPeopleValues);
+        if((isInserted = true) && (isInserted2 = true))
+            Toast.makeText(this,"Data successfully inserted.",Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(this,"Data not successfully inserted.",Toast.LENGTH_LONG).show();
+
     }
 }
