@@ -65,9 +65,9 @@ public class Registration extends AppCompatActivity {
             openActivity = 0;
 
             /**ПРОВЕРЯЕМ, ЧТОБЫ В ФИО БЫЛИ РУССКИЕ БУКВЫ*/
-            if (!Check.checkLetter(Name)
-                    || !Check.checkLetter(Surname)
-                    || !Check.checkLetter(LastName)) {
+            if (!WorkWithData.checkLetter(Name)
+                    || !WorkWithData.checkLetter(Surname)
+                    || !WorkWithData.checkLetter(LastName)) {
                 Toast.makeText(getApplicationContext(),
                         "Поля ФИО должны содержать русские буквы.",
                         Toast.LENGTH_SHORT).show();
@@ -90,14 +90,14 @@ public class Registration extends AppCompatActivity {
 
             if (openActivity == 0) {
                 /**ПРОВЕРКА НА НАЛИЧИЕ ПРОБЕЛА В ПОЛЯХ*/
-                if (Check.checkSpace(Name)
-                        || Check.checkSpace(Surname)
-                        || Check.checkSpace(LastName)
-                        || Check.checkSpace(Group)
-                        || Check.checkSpace(Email)
-                        || Check.checkSpace(Login)
-                        || Check.checkSpace(Password)
-                        || Check.checkSpace(Password2)) {
+                if (WorkWithData.checkSpace(Name)
+                        || WorkWithData.checkSpace(Surname)
+                        || WorkWithData.checkSpace(LastName)
+                        || WorkWithData.checkSpace(Group)
+                        || WorkWithData.checkSpace(Email)
+                        || WorkWithData.checkSpace(Login)
+                        || WorkWithData.checkSpace(Password)
+                        || WorkWithData.checkSpace(Password2)) {
                     Toast.makeText(getApplicationContext(),
                             "Поля не должны содержать пробелов.",
                             Toast.LENGTH_SHORT).show();
