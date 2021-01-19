@@ -110,21 +110,21 @@ public class EventActionFragment extends Fragment {
                 group_name = cursor.getString(4);
                 course_name = cursor.getString(5);
 
-                Toast.makeText(getContext(),
-                        now_course_name + course_name + "\n"
-                                +now_group_name+group_name,
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(),
+//                        now_course_name + course_name + "\n"
+//                                +now_group_name+group_name,
+//                        Toast.LENGTH_SHORT).show();
 
                 if (now_course_name.equals(course_name)) {
                     events.add(new EventConstructor(event_name, event_desc, event_date, group_name, course_name));
                 }
                 if (now_group_name.equalsIgnoreCase(group_name)) {
                     events.add(new EventConstructor(event_name, event_desc, event_date, group_name, course_name));
-                } else  {
+                } /*else  {
                     Toast.makeText(getContext(),
                             "совпадений не найдено",
                             Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
             cursor.moveToNext();
         }

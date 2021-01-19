@@ -110,9 +110,11 @@ public class WorkWithData {
         }
     }
 
-    public static int getLastID() {
 
-        Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
+    public static int getLastID(String table_name) {
+
+
+        Cursor cursor = mDb.rawQuery("SELECT * FROM "+ table_name, null);
         cursor.moveToLast();
         int last_id=Integer.parseInt(cursor.getString(0))+1;
         cursor.close();
@@ -129,5 +131,21 @@ public class WorkWithData {
     public static String firstUpperCase(String word){
         if(word == null || word.isEmpty()) return "";//или return word;
         return word.substring(0, 1).toUpperCase() + word.substring(1);
+    }
+
+    /*ФУНКЦИЯ ПРОВЕРКИ СУЩЕСТВУЮЩЕГО ЛОГИНА*/
+    public static boolean isExist (String Login) {
+        String ExistLogin;
+        Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            ExistLogin = cursor.getString(1);
+
+            if (ExistLogin.equals(Login)) {
+                return true;
+            } else cursor.moveToNext();
+        }
+        cursor.close();
+        return false;
     }
 }

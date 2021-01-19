@@ -162,10 +162,5 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(imageview2);
     }
 
-    /**ДЕЙСТВИЕ КНОПКИ ОСНОВНОГО РАСПИСНАИЯ*/
-    /**Кнопка перехода на изменение расписнаия*/
-    public void teacher (View view){
-        Intent intent = new Intent(this, ScheduleFragment.class);
-        startActivity(intent);
-    }
+
 }
