@@ -19,7 +19,10 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.jar.Attributes;
+
 public class MainActivity extends AppCompatActivity {
+
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -161,6 +164,5 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(textView2);
         linearLayout.addView(imageview2);
     }
-
 
 }

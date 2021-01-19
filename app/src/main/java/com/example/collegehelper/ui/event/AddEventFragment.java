@@ -100,7 +100,7 @@ public class AddEventFragment extends Fragment {
 
                 event_desc = descEvent.getText().toString();
 
-             //   Toast.makeText(getContext(), "Получаемые данные:\n" + course_name+"\n"+group_name+"\n"+event_name+"\n"+event_date+"\n"+event_desc,
+                //   Toast.makeText(getContext(), "Получаемые данные:\n" + course_name+"\n"+group_name+"\n"+event_name+"\n"+event_date+"\n"+event_desc,
                 //          Toast.LENGTH_LONG).show();
 
                 if (next == 0) {
