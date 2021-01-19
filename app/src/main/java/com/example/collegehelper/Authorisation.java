@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.example.collegehelper.WorkWithData.COURSE_NAME;
@@ -18,6 +19,8 @@ import static com.example.collegehelper.WorkWithData.mDb;
 import static com.example.collegehelper.WorkWithData.ID;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.jar.Attributes;
 
 public class Authorisation extends AppCompatActivity {
     private String Login, Password;
@@ -35,6 +38,7 @@ public class Authorisation extends AppCompatActivity {
 
 
     public void openreg(View view) {
+
         // действия, совершаемые после нажатия на кнопку
         // Создаем объект Intent для вызова новой Activity
         Intent intent = new Intent(Authorisation.this, Registration.class);
@@ -62,27 +66,27 @@ public class Authorisation extends AppCompatActivity {
         } else {
             openActivity = 0;
 
-                /**ПРОВЕРКА НА НАЛИЧИЕ ПРОБЕЛА В ПОЛЯХ*/
-                if (WorkWithData.checkSpace(Login)
-                        || WorkWithData.checkSpace(Password)) {
-                    Toast.makeText(getApplicationContext(),
-                            "Поля не должны содержать пробелов.",
-                            Toast.LENGTH_SHORT).show();
-                    openActivity++;
-                } else {
-                    openActivity = 0;
+            /**ПРОВЕРКА НА НАЛИЧИЕ ПРОБЕЛА В ПОЛЯХ*/
+            if (WorkWithData.checkSpace(Login)
+                    || WorkWithData.checkSpace(Password)) {
+                Toast.makeText(getApplicationContext(),
+                        "Поля не должны содержать пробелов.",
+                        Toast.LENGTH_SHORT).show();
+                openActivity++;
+            } else {
+                openActivity = 0;
 
-                    Password = WorkWithData.byteArrayToHexString(WorkWithData.computeHash(Password));
+                Password = WorkWithData.byteArrayToHexString(WorkWithData.computeHash(Password));
 
-                    if (isEquals()) {               //Проверка на одинаковые логин и пароль
-                        openActivity=0;
+                if (isEquals()) {               //Проверка на одинаковые логин и пароль
+                    openActivity=0;
 //                        Toast.makeText(getApplicationContext(),
 //                                "Вы успешно вошли. Ваш тип" + UserType,
 //                                Toast.LENGTH_SHORT).show();
-                    }
-                    else openActivity++;
                 }
+                else openActivity++;
             }
+        }
 
 
         if (openActivity == 0) {
@@ -107,14 +111,14 @@ public class Authorisation extends AppCompatActivity {
         Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-                ID = cursor.getString(0);
-                CurrentLogin = cursor.getString(1);
-                CurrentPassword = cursor.getString(2);
-                UserType = cursor.getString(3);
+            ID = cursor.getString(0);
+            CurrentLogin = cursor.getString(1);
+            CurrentPassword = cursor.getString(2);
+            UserType = cursor.getString(3);
 
-                if (CurrentLogin.equals(Login) && CurrentPassword.equals(Password)) {
-                    return true;
-                } else cursor.moveToNext();
+            if (CurrentLogin.equals(Login) && CurrentPassword.equals(Password)) {
+                return true;
+            } else cursor.moveToNext();
         }
         cursor.close();
         return false;

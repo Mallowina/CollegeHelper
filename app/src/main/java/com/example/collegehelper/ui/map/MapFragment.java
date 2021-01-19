@@ -18,17 +18,13 @@ import com.example.collegehelper.R;
 
 public class MapFragment extends Fragment {
 
-    private MapViewModel mapViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mapViewModel =
-                new ViewModelProvider(this).get(MapViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_map, container, false);
         return root;
     }
 
-    public void ShowNewCorp (View view) {
-
-    }
 }

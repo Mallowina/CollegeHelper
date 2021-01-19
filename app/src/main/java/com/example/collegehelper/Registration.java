@@ -1,15 +1,24 @@
 package com.example.collegehelper;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.collegehelper.WorkWithData;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.collegehelper.WorkWithData.getLastID;
+import static com.example.collegehelper.WorkWithData.mDb;
+
 public class Registration extends AppCompatActivity {
+    private String Name, Surname, LastName, Group, Email, Login, Password, Password2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +35,8 @@ public class Registration extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Registration (View view) {
+    public void Registration (View view) throws Exception {
         int openActivity = 0;
-        String Name, Surname, LastName, Group, Email, Login, Password, Password2;
 
         /**ПОЛУЧЕНИЕ ДАННЫХ В ПЕРЕМЕННЫЕ*/
         EditText editName = (EditText) findViewById(R.id.editName);
@@ -40,6 +48,7 @@ public class Registration extends AppCompatActivity {
         Spinner spinnerGroup = (Spinner) findViewById(R.id.spinnerGroupRegistration);
         Group = spinnerGroup.getSelectedItem().toString();
         EditText editMail = (EditText) findViewById(R.id.editEmail);
+        Spinner spinnerMail = (Spinner) findViewById(R.id.spinnerMailRegistration);
         Email = editMail.getText().toString();
         EditText editLogin = (EditText) findViewById(R.id.editLogin);
         Login = editLogin.getText().toString();
@@ -50,13 +59,13 @@ public class Registration extends AppCompatActivity {
 
         /**ПРОВЕРКА ПУСТЫХ СТРОК*/
         if (Name.isEmpty()
-        || Surname.isEmpty()
-        || LastName.isEmpty()
-        || Group.isEmpty()
-        || Email.isEmpty()
-        || Login.isEmpty()
-        || Password.isEmpty()
-        || Password2.isEmpty()) {
+                || Surname.isEmpty()
+                || LastName.isEmpty()
+                || Group.isEmpty()
+                || Email.isEmpty()
+                || Login.isEmpty()
+                || Password.isEmpty()
+                || Password2.isEmpty()) {
             Toast.makeText(getApplicationContext(),
                     "Поля не должны быть пустыми.",
                     Toast.LENGTH_SHORT).show();
@@ -105,23 +114,76 @@ public class Registration extends AppCompatActivity {
                 } else {
                     openActivity = 0;
 
-                    /**ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ*/
-                    if (Password.equals(Password2)) openActivity = 0;
+                    if (WorkWithData.isExist(Login)) openActivity++;
                     else {
-                        openActivity++;
-                        Toast.makeText(getApplicationContext(),
-                                "Пароли должны совпадать",
-                                Toast.LENGTH_SHORT).show();
+                        /**ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ*/
+                        if (Password.equals(Password2)) openActivity = 0;
+                        else {
+                            openActivity++;
+                            Toast.makeText(getApplicationContext(),
+                                    "Пароли должны совпадать",
+                                    Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             }
+
+            if (openActivity == 0) {
+                Password = WorkWithData.byteArrayToHexString(WorkWithData.computeHash(Password));
+                Email += spinnerMail.getSelectedItem().toString();
+                addUser();
+                // Создаем объект Intent для вызова новой Activity
+                Intent intent = new Intent(this, Authorisation.class);
+                // запуск activity
+                startActivity(intent);
+            }
+        }
+    }
+
+    /**Запись пользователя в БД*/
+    public void addUser() {
+        WorkWithData.ConnectToDB(this);
+
+        mDb.beginTransaction();
+
+
+        int last_id = getLastID("users_info");
+
+// Создайте новую строку со значениями для вставки.
+        ContentValues registrationValues = new ContentValues();
+        ContentValues infoPeopleValues = new ContentValues();
+// Задайте значения для каждой строки.
+        registrationValues.put("id", last_id);
+        registrationValues.put("login", Login);
+        registrationValues.put("password", Password);
+        registrationValues.put("user_type", 1);
+
+        infoPeopleValues.put("id", last_id);
+        infoPeopleValues.put("name", Name);
+        infoPeopleValues.put("surname", Surname);
+        infoPeopleValues.put("second_name", LastName);
+        infoPeopleValues.put("group_name", Group);
+        infoPeopleValues.put("email", Email);
+// Вставьте строку в вашу базу данных.
+        long newRowId = mDb.insert("users_info", null, registrationValues);
+        long newRowId2 =mDb.insert("student_info", null, infoPeopleValues);
+
+        mDb.setTransactionSuccessful();
+        mDb.endTransaction();
+        mDb.close();
+
+        if (newRowId == -1) {
+            // Если ID  -1, значит произошла ошибка
+            Toast.makeText(this, "Ошибка при заведении гостя", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Гость заведён под номером: " + newRowId, Toast.LENGTH_SHORT).show();
         }
 
-        if (openActivity == 0) {
-            // Создаем объект Intent для вызова новой Activity
-            Intent intent = new Intent(this, Authorisation.class);
-            // запуск activity
-            startActivity(intent);
+        if (newRowId2 == -1) {
+            // Если ID  -1, значит произошла ошибка
+            Toast.makeText(this, "Ошибка при заведении гостя", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Гость заведён под номером: " + newRowId, Toast.LENGTH_SHORT).show();
         }
     }
 }

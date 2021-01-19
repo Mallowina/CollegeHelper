@@ -14,9 +14,9 @@ import java.io.OutputStream;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static String DB_NAME = "collegeHelper.db";
     private static String DB_PATH = "";
-    private static final int DB_VERSION = 7;
+    private static final int DB_VERSION = 17;
 
-    private SQLiteDatabase mDataBase;
+    public static SQLiteDatabase mDataBase;
     private final Context mContext;
     private boolean mNeedUpdate = false;
 
@@ -97,4 +97,61 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (newVersion > oldVersion)
             mNeedUpdate = true;
     }
+
+
+//    public boolean insertUsersInfo(String Login, String Password)
+//    {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//
+//        String query = "select * from users_info";
+//        Cursor cursor = db.rawQuery(query, null);
+//        int last_id = cursor.getCount();
+//// Создайте новую строку со значениями для вставки.
+//        ContentValues registrationValues = new ContentValues();
+//
+//// Задайте значения для каждой строки.
+//        registrationValues.put("id", last_id);
+//        registrationValues.put("login", Login);
+//        registrationValues.put("password", Password);
+//        registrationValues.put("user_type", "1");
+//
+//
+//        //SEE WHETHER THE DATA INSERT INTO DB OR NOT
+//        //IF RETURN -1, DATA NOT SUCCESSFUL INSERTED
+//        long result = db.insert("users_info", null, registrationValues);
+//        if (result == -1)
+//            return false;
+//        else
+//            return true;
+//    }
+//
+//
+//
+//    public boolean insertStudentInfo(String Name, String Surname, String LastName, String Group, String Email) {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//
+//        String query = "select * from users_info";
+//        Cursor cursor = db.rawQuery(query, null);
+//        int last_id = cursor.getCount();
+//
+//// Создайте новую строку со значениями для вставки.
+//        ContentValues infoPeopleValues = new ContentValues();
+//
+//// Задайте значения для каждой строки.
+//        infoPeopleValues.put("id", last_id);
+//        infoPeopleValues.put("name", Name);
+//        infoPeopleValues.put("surname", Surname);
+//        infoPeopleValues.put("second_name", LastName);
+//        infoPeopleValues.put("group_name", Group);
+//        infoPeopleValues.put("email", Email);
+//
+//
+//        //SEE WHETHER THE DATA INSERT INTO DB OR NOT
+//        //IF RETURN -1, DATA NOT SUCCESSFUL INSERTED
+//        long result = db.insert("student_info", null, infoPeopleValues);
+//        if (result == -1)
+//            return false;
+//        else
+//            return true;
+//    }
 }
