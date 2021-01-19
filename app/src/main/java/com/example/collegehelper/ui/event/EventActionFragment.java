@@ -47,8 +47,7 @@ public class EventActionFragment extends Fragment {
         spinnerEvents.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(),
-                        "Ваш выбор: " + spinnerEvents.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+
                 switch (spinnerEvents.getSelectedItem().toString()) {
                     case "Самостоятельные работы": {
                         if (!events.isEmpty()) events.clear();
@@ -91,6 +90,7 @@ public class EventActionFragment extends Fragment {
     }
 
     private String now_group_name=getGroupName().trim();
+
     private void get(String event) {
         String event_name=""; // название
         String event_desc="";

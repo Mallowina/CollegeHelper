@@ -88,7 +88,6 @@ public class Authorisation extends AppCompatActivity {
         if (openActivity == 0) {
             WorkWithData.getUser();
 
-
             Toast.makeText(getApplicationContext(),
                     "You " + ID + NAME + SURNAME + SECOND_NAME+ COURSE_NAME + GROUP_NAME + EMAIL,
                     Toast.LENGTH_SHORT).show();

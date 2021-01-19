@@ -99,60 +99,60 @@ public class ScheduleActionFragment extends Fragment {
         Cursor cursor = mDb.rawQuery("SELECT * FROM mainschendule", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            if (GROUP_NAME.equals(cursor.getString(0))) {
-                switch (cursor.getString(1)) {
+            if (GROUP_NAME.equals(cursor.getString(1))) {
+                switch (cursor.getString(2)) {
                     case "Понедельник": {
-                        switch (cursor.getString(2)) {
-                            case "1":{txtMon1.setText(cursor.getString(3));break;}
-                            case "2":{txtMon2.setText(cursor.getString(3));break;}
-                            case "3":{txtMon3.setText(cursor.getString(3));break;}
-                            case "4":{txtMon4.setText(cursor.getString(3));break;}
-                            case "5":{txtMon5.setText(cursor.getString(3));break;}
-                            case "6":{txtMon6.setText(cursor.getString(3));break;}
+                        switch (cursor.getString(3)) {
+                            case "1":{txtMon1.setText(cursor.getString(4));break;}
+                            case "2":{txtMon2.setText(cursor.getString(4));break;}
+                            case "3":{txtMon3.setText(cursor.getString(4));break;}
+                            case "4":{txtMon4.setText(cursor.getString(4));break;}
+                            case "5":{txtMon5.setText(cursor.getString(4));break;}
+                            case "6":{txtMon6.setText(cursor.getString(4));break;}
                         }
                         break;
                     }
                     case "Вторник": {
-                        switch (cursor.getString(2)) {
-                            case "1":{txtTue1.setText(cursor.getString(3));break;}
-                            case "2":{txtTue2.setText(cursor.getString(3));break;}
-                            case "3":{txtTue3.setText(cursor.getString(3));break;}
-                            case "4":{txtTue4.setText(cursor.getString(3));break;}
-                            case "5":{txtTue5.setText(cursor.getString(3));break;}
-                            case "6":{txtTue6.setText(cursor.getString(3));break;}
+                        switch (cursor.getString(3)) {
+                            case "1":{txtTue1.setText(cursor.getString(4));break;}
+                            case "2":{txtTue2.setText(cursor.getString(4));break;}
+                            case "3":{txtTue3.setText(cursor.getString(4));break;}
+                            case "4":{txtTue4.setText(cursor.getString(4));break;}
+                            case "5":{txtTue5.setText(cursor.getString(4));break;}
+                            case "6":{txtTue6.setText(cursor.getString(4));break;}
                         }
                         break;
                     }
                     case "Среда": {
-                        switch (cursor.getString(2)) {
-                            case "1":{txtWen1.setText(cursor.getString(3));break;}
-                            case "2":{txtWen2.setText(cursor.getString(3));break;}
-                            case "3":{txtWen3.setText(cursor.getString(3));break;}
-                            case "4":{txtWen4.setText(cursor.getString(3));break;}
-                            case "5":{txtWen5.setText(cursor.getString(3));break;}
-                            case "6":{txtWen6.setText(cursor.getString(3));break;}
+                        switch (cursor.getString(3)) {
+                            case "1":{txtWen1.setText(cursor.getString(4));break;}
+                            case "2":{txtWen2.setText(cursor.getString(4));break;}
+                            case "3":{txtWen3.setText(cursor.getString(4));break;}
+                            case "4":{txtWen4.setText(cursor.getString(4));break;}
+                            case "5":{txtWen5.setText(cursor.getString(4));break;}
+                            case "6":{txtWen6.setText(cursor.getString(4));break;}
                         }
                         break;
                     }
                     case "Четверг": {
-                        switch (cursor.getString(2)) {
-                            case "1":{txtThu1.setText(cursor.getString(3));break;}
-                            case "2":{txtThu2.setText(cursor.getString(3));break;}
-                            case "3":{txtThu3.setText(cursor.getString(3));break;}
-                            case "4":{txtThu4.setText(cursor.getString(3));break;}
-                            case "5":{txtThu5.setText(cursor.getString(3));break;}
-                            case "6":{txtThu6.setText(cursor.getString(3));break;}
+                        switch (cursor.getString(3)) {
+                            case "1":{txtThu1.setText(cursor.getString(4));break;}
+                            case "2":{txtThu2.setText(cursor.getString(4));break;}
+                            case "3":{txtThu3.setText(cursor.getString(4));break;}
+                            case "4":{txtThu4.setText(cursor.getString(4));break;}
+                            case "5":{txtThu5.setText(cursor.getString(4));break;}
+                            case "6":{txtThu6.setText(cursor.getString(4));break;}
                         }
                         break;
                     }
                     case "Пятница": {
-                        switch (cursor.getString(2)) {
-                            case "1":{txtFri1.setText(cursor.getString(3));break;}
-                            case "2":{txtFri2.setText(cursor.getString(3));break;}
-                            case "3":{txtFri3.setText(cursor.getString(3));break;}
-                            case "4":{txtFri4.setText(cursor.getString(3));break;}
-                            case "5":{txtFri5.setText(cursor.getString(3));break;}
-                            case "6":{txtFri6.setText(cursor.getString(3));break;}
+                        switch (cursor.getString(3)) {
+                            case "1":{txtFri1.setText(cursor.getString(4));break;}
+                            case "2":{txtFri2.setText(cursor.getString(4));break;}
+                            case "3":{txtFri3.setText(cursor.getString(4));break;}
+                            case "4":{txtFri4.setText(cursor.getString(4));break;}
+                            case "5":{txtFri5.setText(cursor.getString(4));break;}
+                            case "6":{txtFri6.setText(cursor.getString(4));break;}
                         }
                         break;
                     }
@@ -206,62 +206,62 @@ public class ScheduleActionFragment extends Fragment {
         Cursor cursor = mDb.rawQuery("SELECT * FROM changeschendule", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            if (GROUP_NAME.equals(cursor.getString(0))) {
-                if (cursor.getString(1).equals(today)) {
+            if (GROUP_NAME.equals(cursor.getString(1))) {
+                if (cursor.getString(2).equals(today)) {
                     txtTod.setText(today);
-                    switch (cursor.getString(2)) {
+                    switch (cursor.getString(3)) {
                         case "1": {
-                            txtTod1.setText(cursor.getString(3));
+                            txtTod1.setText(cursor.getString(4));
                             break;
                         }
                         case "2": {
-                            txtTod2.setText(cursor.getString(3));
+                            txtTod2.setText(cursor.getString(4));
                             break;
                         }
                         case "3": {
-                            txtTod3.setText(cursor.getString(3));
+                            txtTod3.setText(cursor.getString(4));
                             break;
                         }
                         case "4": {
-                            txtTod4.setText(cursor.getString(3));
+                            txtTod4.setText(cursor.getString(4));
                             break;
                         }
                         case "5": {
-                            txtTod5.setText(cursor.getString(3));
+                            txtTod5.setText(cursor.getString(4));
                             break;
                         }
                         case "6": {
-                            txtTod6.setText(cursor.getString(3));
+                            txtTod6.setText(cursor.getString(4));
                             break;
                         }
                     }
                 }
             }
-            if (cursor.getString(1).equals(next_day)) {
+            if (cursor.getString(2).equals(next_day)) {
                 txtTom.setText(next_day);
-                switch (cursor.getString(2)) {
+                switch (cursor.getString(3)) {
                     case "1": {
-                        txtTom1.setText(cursor.getString(3));
+                        txtTom1.setText(cursor.getString(4));
                         break;
                     }
                     case "2": {
-                        txtTom2.setText(cursor.getString(3));
+                        txtTom2.setText(cursor.getString(4));
                         break;
                     }
                     case "3": {
-                        txtTom3.setText(cursor.getString(3));
+                        txtTom3.setText(cursor.getString(4));
                         break;
                     }
                     case "4": {
-                        txtTom4.setText(cursor.getString(3));
+                        txtTom4.setText(cursor.getString(4));
                         break;
                     }
                     case "5": {
-                        txtTom5.setText(cursor.getString(3));
+                        txtTom5.setText(cursor.getString(4));
                         break;
                     }
                     case "6": {
-                        txtTom6.setText(cursor.getString(3));
+                        txtTom6.setText(cursor.getString(4));
                         break;
                     }
                 }

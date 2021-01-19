@@ -27,13 +27,15 @@
             android:id="@+id/ismenn"
             android:layout_width="372dp"
             android:layout_height="40dp"
+            android:layout_marginTop="12dp"
             android:text="Изменения в расписании"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/raspp" />
 
         <Spinner
-            android:id="@+id/spinnerGroupRegistration"
+            android:id="@+id/spinnerGroupSchedule"
             android:layout_width="109dp"
             android:layout_height="30dp"
             android:layout_marginTop="12dp"
@@ -47,13 +49,13 @@
             android:id="@+id/layoutt"
             android:layout_width="376dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGroupRegistration">
+            app:layout_constraintTop_toBottomOf="@+id/ismenn">
 
             <TableLayout
                 android:id="@+id/table"
@@ -96,7 +98,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -117,7 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -139,7 +141,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -161,7 +163,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -183,7 +185,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -205,7 +207,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -244,7 +246,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -266,7 +268,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -288,7 +290,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -310,7 +312,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -332,7 +334,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -354,7 +356,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -393,7 +395,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -415,7 +417,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -437,7 +439,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -459,7 +461,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -481,7 +483,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -503,7 +505,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -542,7 +544,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -564,7 +566,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -586,7 +588,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -608,7 +610,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -630,7 +632,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -652,7 +654,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -691,7 +693,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -713,7 +715,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -735,7 +737,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -757,7 +759,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -779,7 +781,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -801,7 +803,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
             </TableLayout>
@@ -812,12 +814,12 @@
             android:layout_width="373dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:orientation="vertical"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGroupRegistration">
+            app:layout_constraintTop_toBottomOf="@id/ismenn">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -832,6 +834,8 @@
                         android:id="@+id/addTod"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Понедельник"
+                        android:textColor="#000000"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -972,8 +976,10 @@
                         android:id="@+id/addTom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Вторник"
+                        android:textColor="#000000"
                         android:textSize="20sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                 </TableRow>
 
@@ -1109,15 +1115,14 @@
 
         <Button
             android:id="@+id/btnCreateMainSchedule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="167dp"
-            android:layout_marginEnd="151dp"
+            android:layout_width="115dp"
+            android:layout_height="49dp"
             android:text="Создать"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.948"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layoutt" />
+            app:layout_constraintTop_toBottomOf="@+id/ismenn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
