@@ -47,9 +47,9 @@ public class Authorisation extends AppCompatActivity {
 
         /**ПОЛУЧЕНИЕ ДАННЫХ В ПЕРЕМЕННЫЕ*/
         EditText editLogin = (EditText) findViewById(R.id.editLogin);
-        Login = editLogin.getText().toString();
+        Login = editLogin.getText().toString().trim();
         EditText editPass = (EditText) findViewById(R.id.editPassword2);
-        Password = editPass.getText().toString();
+        Password = editPass.getText().toString().trim();
 
 
 

@@ -2,6 +2,7 @@ package com.example.collegehelper.ui.event;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +21,9 @@ import static com.example.collegehelper.WorkWithData.getCourseName;
 import static com.example.collegehelper.WorkWithData.getGroupName;
 import static com.example.collegehelper.WorkWithData.mDb;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
+import java.util.Calendar;
 
 
 public class EventActionFragment extends Fragment {
@@ -110,21 +112,20 @@ public class EventActionFragment extends Fragment {
                 group_name = cursor.getString(4);
                 course_name = cursor.getString(5);
 
-//                Toast.makeText(getContext(),
-//                        now_course_name + course_name + "\n"
-//                                +now_group_name+group_name,
-//                        Toast.LENGTH_SHORT).show();
+                // Get Current Date Time
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+                String getCurrentDateTime = sdf.format(c.getTime());
 
-                if (now_course_name.equals(course_name)) {
-                    events.add(new EventConstructor(event_name, event_desc, event_date, group_name, course_name));
+
+                if (getCurrentDateTime.compareTo(event_date) <= 0) {
+                    if (now_course_name.equals(course_name)) {
+                        events.add(new EventConstructor(event_name, event_desc, event_date, group_name, course_name));
+                    }
+                    if (now_group_name.equalsIgnoreCase(group_name)) {
+                        events.add(new EventConstructor(event_name, event_desc, event_date, group_name, course_name));
+                    }
                 }
-                if (now_group_name.equalsIgnoreCase(group_name)) {
-                    events.add(new EventConstructor(event_name, event_desc, event_date, group_name, course_name));
-                } /*else  {
-                    Toast.makeText(getContext(),
-                            "совпадений не найдено",
-                            Toast.LENGTH_SHORT).show();
-                }*/
             }
             cursor.moveToNext();
         }

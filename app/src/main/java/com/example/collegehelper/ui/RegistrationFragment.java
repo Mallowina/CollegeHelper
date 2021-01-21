@@ -43,20 +43,20 @@ public class RegistrationFragment extends Fragment {
 
                 /**ПОЛУЧЕНИЕ ДАННЫХ В ПЕРЕМЕННЫЕ*/
                 EditText editName = (EditText) root.findViewById(R.id.editname);
-                Name = editName.getText().toString();
+                Name = editName.getText().toString().trim();
                 EditText editSurN = (EditText) root.findViewById(R.id.editsurn);
-                Surname = editSurN.getText().toString();
+                Surname = editSurN.getText().toString().trim();
                 EditText editLastN = (EditText) root.findViewById(R.id.editlastn);
-                LastName = editLastN.getText().toString();
+                LastName = editLastN.getText().toString().trim();
                 EditText editMail = (EditText) root.findViewById(R.id.editmail);
                 Spinner spinnerMail = (Spinner) root.findViewById(R.id.spinnerMailRegistration);
-                Email = editMail.getText().toString();
+                Email = editMail.getText().toString().trim();
                 EditText editLogin = (EditText) root.findViewById(R.id.editlogin);
-                Login = editLogin.getText().toString();
+                Login = editLogin.getText().toString().trim();
                 EditText editPass = (EditText) root.findViewById(R.id.editpassword);
-                Password = editPass.getText().toString();
+                Password = editPass.getText().toString().trim();
                 EditText editPass2 = (EditText) root.findViewById(R.id.editpassword2);
-                Password2 = editPass2.getText().toString();
+                Password2 = editPass2.getText().toString().trim();
 
                 /**ПРОВЕРКА ПУСТЫХ СТРОК*/
                 if (Name.isEmpty()

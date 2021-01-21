@@ -40,22 +40,22 @@ public class Registration extends AppCompatActivity {
 
         /**ПОЛУЧЕНИЕ ДАННЫХ В ПЕРЕМЕННЫЕ*/
         EditText editName = (EditText) findViewById(R.id.editName);
-        Name = editName.getText().toString();
+        Name = editName.getText().toString().trim();
         EditText editSurN = (EditText) findViewById(R.id.editSurN);
-        Surname = editSurN.getText().toString();
+        Surname = editSurN.getText().toString().trim();
         EditText editLastN = (EditText) findViewById(R.id.editLastN);
-        LastName = editLastN.getText().toString();
+        LastName = editLastN.getText().toString().trim();
         Spinner spinnerGroup = (Spinner) findViewById(R.id.spinnerGroupRegistration);
         Group = spinnerGroup.getSelectedItem().toString();
         EditText editMail = (EditText) findViewById(R.id.editEmail);
         Spinner spinnerMail = (Spinner) findViewById(R.id.spinnerMailRegistration);
-        Email = editMail.getText().toString();
+        Email = editMail.getText().toString().trim();
         EditText editLogin = (EditText) findViewById(R.id.editLogin);
-        Login = editLogin.getText().toString();
+        Login = editLogin.getText().toString().trim();
         EditText editPass = (EditText) findViewById(R.id.editPassword);
-        Password = editPass.getText().toString();
+        Password = editPass.getText().toString().trim();
         EditText editPass2 = (EditText) findViewById(R.id.editPassword2);
-        Password2 = editPass2.getText().toString();
+        Password2 = editPass2.getText().toString().trim();
 
         /**ПРОВЕРКА ПУСТЫХ СТРОК*/
         if (Name.isEmpty()
