@@ -172,18 +172,9 @@ public class Registration extends AppCompatActivity {
         mDb.endTransaction();
         mDb.close();
 
-        if (newRowId == -1) {
+        if (newRowId == -1 || newRowId2 == -1) {
             // Если ID  -1, значит произошла ошибка
-            Toast.makeText(this, "Ошибка при заведении гостя", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Гость заведён под номером: " + newRowId, Toast.LENGTH_SHORT).show();
-        }
-
-        if (newRowId2 == -1) {
-            // Если ID  -1, значит произошла ошибка
-            Toast.makeText(this, "Ошибка при заведении гостя", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Гость заведён под номером: " + newRowId, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ошибка при заведении пользователя", Toast.LENGTH_SHORT).show();
         }
     }
 }

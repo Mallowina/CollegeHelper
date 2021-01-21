@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         nav_mail.setText(EMAIL);                                    //ВЫВОД ПОЧТЫ ПОЛЬЗОВАТЕЛЯ
 
         /**СКРЫТИЕ ЭЛЕМЕНТА В ШТОРКЕ*/
-//        Menu menu = navigationView.getMenu();
-//        menu.findItem(R.id.nav_schedule).setVisible(false);
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_home).setVisible(false);
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
