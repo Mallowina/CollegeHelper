@@ -111,6 +111,7 @@ public class WorkWithData {
                 NAME = "Евгений";
                 SURNAME = "Крылов";
                 SECOND_NAME = "Александрович";
+                EMAIL = "admin@mail.ru";
                 break;
             }
         }

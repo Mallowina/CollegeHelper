@@ -10,19 +10,19 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_map"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/map"
             android:title="@string/menu_map" />
         <item
             android:id="@+id/nav_event"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/ev"
             android:title="@string/menu_event" />
         <item
             android:id="@+id/nav_schedule"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/shed"
             android:title="@string/menu_schedule" />
         <item
             android:id="@+id/nav_registration"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/reg"
             android:title="@string/menu_registration" />
     </group>
 </menu>
