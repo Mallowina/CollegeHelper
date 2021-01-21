@@ -1,18 +1,18 @@
 package com.example.collegehelper.ui.schedule;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.Button;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+        import androidx.annotation.NonNull;
+        import androidx.fragment.app.Fragment;
+        import androidx.fragment.app.FragmentTransaction;
 
-import com.example.collegehelper.R;
+        import com.example.collegehelper.R;
 
-import static com.example.collegehelper.WorkWithData.UserType;
+        import static com.example.collegehelper.WorkWithData.UserType;
 
 public class ScheduleFragment extends Fragment {
 

@@ -23,6 +23,7 @@ import static com.example.collegehelper.WorkWithData.SURNAME;
 import static com.example.collegehelper.WorkWithData.NAME;
 import static com.example.collegehelper.WorkWithData.SECOND_NAME;
 import static com.example.collegehelper.WorkWithData.EMAIL;
+import static com.example.collegehelper.WorkWithData.UserType;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,11 +60,14 @@ public class MainActivity extends AppCompatActivity {
         /**СКРЫТИЕ ЭЛЕМЕНТА В ШТОРКЕ*/
         Menu menu = navigationView.getMenu();
         menu.findItem(R.id.nav_home).setVisible(false);
+        menu.findItem(R.id.nav_registration).setVisible(false);
+
+        if (UserType.equals("3")) menu.findItem(R.id.nav_registration).setVisible(true);
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_map, R.id.nav_event, R.id.nav_schedule)  //Сюда записать фрагмент, чтобы была красивая шторка, а не стрелка
+                R.id.nav_home, R.id.nav_map, R.id.nav_event, R.id.nav_schedule, R.id.nav_registration)  //Сюда записать фрагмент, чтобы была красивая шторка, а не стрелка
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
