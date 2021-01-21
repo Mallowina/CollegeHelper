@@ -18,22 +18,25 @@
             android:layout_height="42dp"
             android:layout_marginTop="55dp"
             android:text="Основное расписание"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <Button
             android:id="@+id/ismen"
             android:layout_width="372dp"
             android:layout_height="40dp"
+            android:layout_marginTop="55dp"
             android:text="Изменения в расписании"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rasp" />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/spinnerGroupRegistration"
+            android:id="@+id/spinnerGroupShowSchedule"
             android:layout_width="109dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"

@@ -58,12 +58,14 @@ public class ScheduleTeacherFragment extends Fragment {
         TextView addTom = root.findViewById(R.id.addTom);
         addTom.setText(next_day);
 
-
-
         Button main_schedule = root.findViewById(R.id.raspp);
+        Button change_schedule = root.findViewById(R.id.ismenn);
+
         main_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                main_schedule.setVisibility(View.INVISIBLE);
+                change_schedule.setVisibility(View.VISIBLE);
                 what_create = 1;
                 LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layoutt);
                 LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layoutt1);
@@ -72,10 +74,11 @@ public class ScheduleTeacherFragment extends Fragment {
             }
         });
 
-        Button change_schedule = root.findViewById(R.id.ismenn);
         change_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                main_schedule.setVisibility(View.VISIBLE);
+                change_schedule.setVisibility(View.INVISIBLE);
                 what_create=2;
                 LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layoutt);
                 LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layoutt1);
@@ -420,6 +423,25 @@ public class ScheduleTeacherFragment extends Fragment {
     }
 
     public void addChangeSchedule() {
+        String today, next_day;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = new Date();
+        today = firstUpperCase(sdf.format(d));
+
+        switch (today) {
+            case "Понедельник": next_day="Вторник"; break;
+            case "Вторник":next_day="Среда"; break;
+            case "Среда":next_day="Четверг"; break;
+            case "Четверг":next_day="Пятница"; break;
+            case "Пятница":next_day="Понедельник"; break;
+            default: {
+                today = "Понедельник";
+                next_day="Вторник";
+                break;
+            }
+        }
+
         /*Строковые данные для добавления в бд*/
         String Tod1, Tod2, Tod3, Tod4, Tod5, Tod6;
         String Tom1, Tom2, Tom3, Tom4, Tom5, Tom6;
@@ -479,63 +501,63 @@ public class ScheduleTeacherFragment extends Fragment {
 // Задайте значения для каждой строки.
         tod1Values.put("id", last_id);    //Понедельник
         tod1Values.put("group_name", group_name);
-        tod1Values.put("day_of_week", "Понедельник");
+        tod1Values.put("day_of_week", today);
         tod1Values.put("number", "1");
         tod1Values.put("lesson", Tod1);
         tod2Values.put("id", last_id+1);
         tod2Values.put("group_name", group_name);
-        tod2Values.put("day_of_week", "Понедельник");
+        tod2Values.put("day_of_week", today);
         tod2Values.put("number", "2");
         tod2Values.put("lesson", Tod2);
         tod3Values.put("id", last_id+2);
         tod3Values.put("group_name", group_name);
-        tod3Values.put("day_of_week", "Понедельник");
+        tod3Values.put("day_of_week", today);
         tod3Values.put("number", "3");
         tod3Values.put("lesson", Tod3);
         tod4Values.put("id", last_id+3);
         tod4Values.put("group_name", group_name);
-        tod4Values.put("day_of_week", "Понедельник");
+        tod4Values.put("day_of_week", today);
         tod4Values.put("number", "4");
         tod4Values.put("lesson", Tod4);
         tod5Values.put("id", last_id+4);
         tod5Values.put("group_name", group_name);
-        tod5Values.put("day_of_week", "Понедельник");
+        tod5Values.put("day_of_week", today);
         tod5Values.put("number", "5");
         tod5Values.put("lesson", Tod5);
         tod6Values.put("id", last_id+5);
         tod6Values.put("group_name", group_name);
-        tod6Values.put("day_of_week", "Понедельник");
+        tod6Values.put("day_of_week", today);
         tod6Values.put("number", "6");
         tod6Values.put("lesson", Tod6);
 
         tom1Values.put("id", last_id+6);    //Вторник
         tom1Values.put("group_name", group_name);
-        tom1Values.put("day_of_week", "Вторник");
+        tom1Values.put("day_of_week", next_day);
         tom1Values.put("number", "1");
         tom1Values.put("lesson", Tom1);
         tom2Values.put("id", last_id+7);
         tom2Values.put("group_name", group_name);
-        tom2Values.put("day_of_week", "Вторник");
+        tom2Values.put("day_of_week", next_day);
         tom2Values.put("number", "2");
         tom2Values.put("lesson", Tom2);
         tom3Values.put("id", last_id+8);
         tom3Values.put("group_name", group_name);
-        tom3Values.put("day_of_week", "Вторник");
+        tom3Values.put("day_of_week", next_day);
         tom3Values.put("number", "3");
         tom3Values.put("lesson", Tom3);
         tom4Values.put("id", last_id+9);
         tom4Values.put("group_name", group_name);
-        tom4Values.put("day_of_week", "Вторник");
+        tom4Values.put("day_of_week", next_day);
         tom4Values.put("number", "4");
         tom4Values.put("lesson", Tom4);
         tom5Values.put("id", last_id+10);
         tom5Values.put("group_name", group_name);
-        tom5Values.put("day_of_week", "Вторник");
+        tom5Values.put("day_of_week", next_day);
         tom5Values.put("number", "5");
         tom5Values.put("lesson", Tom5);
         tom6Values.put("id", last_id+11);
         tom6Values.put("group_name", group_name);
-        tom6Values.put("day_of_week", "Вторник");
+        tom6Values.put("day_of_week", next_day);
         tom6Values.put("number", "6");
         tom6Values.put("lesson", Tom6);
 

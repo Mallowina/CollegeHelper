@@ -107,6 +107,12 @@ public class WorkWithData {
                 cursor.close();
                 break;
             }
+            case "3": {
+                NAME = "Евгений";
+                SURNAME = "Крылов";
+                SECOND_NAME = "Александрович";
+                break;
+            }
         }
     }
 

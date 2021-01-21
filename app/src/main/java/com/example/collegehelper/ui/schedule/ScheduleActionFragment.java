@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,11 +21,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static com.example.collegehelper.WorkWithData.GROUP_NAME;
+import static com.example.collegehelper.WorkWithData.UserType;
 import static com.example.collegehelper.WorkWithData.firstUpperCase;
 import static com.example.collegehelper.WorkWithData.mDb;
 
 public class ScheduleActionFragment extends Fragment {
     private View root;
+    private String GroupName = GROUP_NAME;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,13 +35,37 @@ public class ScheduleActionFragment extends Fragment {
 
         WorkWithData.ConnectToDB(this.getContext());
 
-        setMainSchedule();
-        setChangeSchedule();
+
 
         Button main_schedule = root.findViewById(R.id.rasp);
+        Button change_schedule = root.findViewById(R.id.ismen);
+        Spinner showListGroup = root.findViewById(R.id.spinnerGroupShowSchedule);
+
+        if (UserType.equals("1")) {
+            showListGroup.setVisibility(View.GONE);
+            setMainSchedule();
+            setChangeSchedule();
+        }
+
+        showListGroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                GroupName = showListGroup.getSelectedItem().toString();
+                setMainSchedule();
+                setChangeSchedule();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         main_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                main_schedule.setVisibility(View.INVISIBLE);
+                change_schedule.setVisibility(View.VISIBLE);
                 LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layout);
                 LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layout1);
                 linearLayout.setVisibility(View.VISIBLE);
@@ -45,10 +73,11 @@ public class ScheduleActionFragment extends Fragment {
             }
         });
 
-        Button change_schedule = root.findViewById(R.id.ismen);
         change_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                main_schedule.setVisibility(View.VISIBLE);
+                change_schedule.setVisibility(View.INVISIBLE);
                 LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.layout);
                 LinearLayout linearLayout1 = (LinearLayout) root.findViewById(R.id.layout1);
                 linearLayout1.setVisibility(View.VISIBLE);
@@ -96,10 +125,45 @@ public class ScheduleActionFragment extends Fragment {
         TextView txtFri5 = root.findViewById(R.id.e5);
         TextView txtFri6 = root.findViewById(R.id.e6);
 
+        txtMon1.setText("______");
+        txtMon2.setText("______");
+        txtMon3.setText("______");
+        txtMon4.setText("______");
+        txtMon5.setText("______");
+        txtMon6.setText("______");
+
+        txtTue1.setText("______");
+        txtTue2.setText("______");
+        txtTue3.setText("______");
+        txtTue4.setText("______");
+        txtTue5.setText("______");
+        txtTue6.setText("______");
+
+        txtWen1.setText("______");
+        txtWen2.setText("______");
+        txtWen3.setText("______");
+        txtWen4.setText("______");
+        txtWen5.setText("______");
+        txtWen6.setText("______");
+
+        txtThu1.setText("______");
+        txtThu2.setText("______");
+        txtThu3.setText("______");
+        txtThu4.setText("______");
+        txtThu5.setText("______");
+        txtThu6.setText("______");
+
+        txtFri1.setText("______");
+        txtFri2.setText("______");
+        txtFri3.setText("______");
+        txtFri4.setText("______");
+        txtFri5.setText("______");
+        txtFri6.setText("______");
+
         Cursor cursor = mDb.rawQuery("SELECT * FROM mainschendule", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            if (GROUP_NAME.equals(cursor.getString(1))) {
+            if (GroupName.equals(cursor.getString(1))) {
                 switch (cursor.getString(2)) {
                     case "Понедельник": {
                         switch (cursor.getString(3)) {
@@ -184,6 +248,20 @@ public class ScheduleActionFragment extends Fragment {
         TextView txtTod = root.findViewById(R.id.txtTod);
         TextView txtTom = root.findViewById(R.id.txtNextDay);
 
+        txtTod1.setText("______");
+        txtTod2.setText("______");
+        txtTod3.setText("______");
+        txtTod4.setText("______");
+        txtTod5.setText("______");
+        txtTod6.setText("______");
+
+        txtTom1.setText("______");
+        txtTom2.setText("______");
+        txtTom3.setText("______");
+        txtTom4.setText("______");
+        txtTom5.setText("______");
+        txtTom6.setText("______");
+
         String today, next_day;
 
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
@@ -206,64 +284,28 @@ public class ScheduleActionFragment extends Fragment {
         Cursor cursor = mDb.rawQuery("SELECT * FROM changeschendule", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            if (GROUP_NAME.equals(cursor.getString(1))) {
+            if (GroupName.equals(cursor.getString(1))) {
                 if (cursor.getString(2).equals(today)) {
                     txtTod.setText(today);
                     switch (cursor.getString(3)) {
-                        case "1": {
-                            txtTod1.setText(cursor.getString(4));
-                            break;
-                        }
-                        case "2": {
-                            txtTod2.setText(cursor.getString(4));
-                            break;
-                        }
-                        case "3": {
-                            txtTod3.setText(cursor.getString(4));
-                            break;
-                        }
-                        case "4": {
-                            txtTod4.setText(cursor.getString(4));
-                            break;
-                        }
-                        case "5": {
-                            txtTod5.setText(cursor.getString(4));
-                            break;
-                        }
-                        case "6": {
-                            txtTod6.setText(cursor.getString(4));
-                            break;
-                        }
+                        case "1": { txtTod1.setText(cursor.getString(4));break; }
+                        case "2": { txtTod2.setText(cursor.getString(4));break; }
+                        case "3": { txtTod3.setText(cursor.getString(4));break; }
+                        case "4": { txtTod4.setText(cursor.getString(4));break; }
+                        case "5": { txtTod5.setText(cursor.getString(4));break; }
+                        case "6": { txtTod6.setText(cursor.getString(4));break; }
                     }
                 }
             }
             if (cursor.getString(2).equals(next_day)) {
                 txtTom.setText(next_day);
                 switch (cursor.getString(3)) {
-                    case "1": {
-                        txtTom1.setText(cursor.getString(4));
-                        break;
-                    }
-                    case "2": {
-                        txtTom2.setText(cursor.getString(4));
-                        break;
-                    }
-                    case "3": {
-                        txtTom3.setText(cursor.getString(4));
-                        break;
-                    }
-                    case "4": {
-                        txtTom4.setText(cursor.getString(4));
-                        break;
-                    }
-                    case "5": {
-                        txtTom5.setText(cursor.getString(4));
-                        break;
-                    }
-                    case "6": {
-                        txtTom6.setText(cursor.getString(4));
-                        break;
-                    }
+                    case "1": { txtTom1.setText(cursor.getString(4));break; }
+                    case "2": { txtTom2.setText(cursor.getString(4));break; }
+                    case "3": { txtTom3.setText(cursor.getString(4));break; }
+                    case "4": { txtTom4.setText(cursor.getString(4));break; }
+                    case "5": { txtTom5.setText(cursor.getString(4));break; }
+                    case "6": { txtTom6.setText(cursor.getString(4));break; }
                 }
             }
             cursor.moveToNext();

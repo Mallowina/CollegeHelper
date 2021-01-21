@@ -74,13 +74,24 @@ public class Authorisation extends AppCompatActivity {
 
                 Password = WorkWithData.byteArrayToHexString(WorkWithData.computeHash(Password));
 
-                if (isEquals()) {               //Проверка на одинаковые логин и пароль
-                    openActivity=0;
-//                        Toast.makeText(getApplicationContext(),
-//                                "Вы успешно вошли. Ваш тип" + UserType,
-//                                Toast.LENGTH_SHORT).show();
+                boolean trLogin = isEqualsLogin(), trPassword = isEqualsPassword();
+
+                if (trLogin) {
+                    if (trPassword) openActivity=0;
+                    else {
+                        Toast.makeText(getApplicationContext(),
+                                "Неверный пароль",
+                                Toast.LENGTH_SHORT).show();
+                        openActivity++;
+                    }
+
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Неверный логин",
+                            Toast.LENGTH_SHORT).show();
+                    openActivity++;
                 }
-                else openActivity++;
+
             }
         }
 
@@ -88,9 +99,9 @@ public class Authorisation extends AppCompatActivity {
         if (openActivity == 0) {
             WorkWithData.getUser();
 
-            Toast.makeText(getApplicationContext(),
-                    "You " + ID + NAME + SURNAME + SECOND_NAME+ COURSE_NAME + GROUP_NAME + EMAIL,
-                    Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(),
+//                    "You " + ID + NAME + SURNAME + SECOND_NAME+ COURSE_NAME + GROUP_NAME + EMAIL,
+//                    Toast.LENGTH_SHORT).show();
 
             // Создаем объект Intent для вызова новой Activity
             Intent intent = new Intent(this, MainActivity.class);
@@ -102,7 +113,7 @@ public class Authorisation extends AppCompatActivity {
 
 
     /*ФУНКЦИЯ ПРОВЕРКИ ЛОГИНА И ПАРОЛЯ*/
-    private boolean isEquals() {
+    private boolean isEqualsLogin() {
         Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -111,8 +122,28 @@ public class Authorisation extends AppCompatActivity {
             CurrentPassword = cursor.getString(2);
             UserType = cursor.getString(3);
 
-            if (CurrentLogin.equals(Login) && CurrentPassword.equals(Password)) {
-                return true;
+            if (CurrentLogin.equals(Login)) return true;
+            else {
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return false;
+    }
+    private boolean isEqualsPassword() {
+        Cursor cursor = mDb.rawQuery("SELECT * FROM users_info", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            ID = cursor.getString(0);
+            CurrentLogin = cursor.getString(1);
+            CurrentPassword = cursor.getString(2);
+            UserType = cursor.getString(3);
+
+            if (CurrentLogin.equals(Login)) {
+               if (CurrentPassword.equals(Password)) return true;
+               else {
+                   cursor.moveToNext();
+               }
             } else cursor.moveToNext();
         }
         cursor.close();
