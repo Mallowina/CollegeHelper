@@ -98,10 +98,8 @@ public class EventActionFragment extends Fragment {
         String event_desc="";
         String event_date="";
         String group_name="";
-
         String course_name="";
         String now_course_name=getCourseName().trim();
-
         Cursor cursor = mDb.rawQuery("SELECT * FROM events", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -111,14 +109,11 @@ public class EventActionFragment extends Fragment {
                 event_date = cursor.getString(3);
                 group_name = cursor.getString(4);
                 course_name = cursor.getString(5);
-
-                // Get Current Date Time
+                // Определяем системное время
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
                 String getCurrentDateTime = sdf.format(c.getTime());
-
-
-                if (getCurrentDateTime.compareTo(event_date) <= 0) {
+                if (getCurrentDateTime.compareTo(event_date) <= 0) {   //Условие не выполнится, если дата меньше текущей
                     if (now_course_name.equals(course_name)) {
                         events.add(new EventConstructor(event_name, event_desc, event_date, group_name, course_name));
                     }

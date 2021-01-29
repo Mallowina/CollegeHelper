@@ -280,13 +280,15 @@ public class ScheduleActionFragment extends Fragment {
                 break;
             }
         }
+        txtTod.setText(today);
+        txtTom.setText(next_day);
 
         Cursor cursor = mDb.rawQuery("SELECT * FROM changeschendule", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             if (GroupName.equals(cursor.getString(1))) {
                 if (cursor.getString(2).equals(today)) {
-                    txtTod.setText(today);
+//                    txtTod.setText(today);
                     switch (cursor.getString(3)) {
                         case "1": { txtTod1.setText(cursor.getString(4));break; }
                         case "2": { txtTod2.setText(cursor.getString(4));break; }
@@ -298,7 +300,7 @@ public class ScheduleActionFragment extends Fragment {
                 }
             }
             if (cursor.getString(2).equals(next_day)) {
-                txtTom.setText(next_day);
+//                txtTom.setText(next_day);
                 switch (cursor.getString(3)) {
                     case "1": { txtTom1.setText(cursor.getString(4));break; }
                     case "2": { txtTom2.setText(cursor.getString(4));break; }

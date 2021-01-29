@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class WorkWithData {
     /**/
@@ -154,5 +156,10 @@ public class WorkWithData {
         }
         cursor.close();
         return false;
+    }
+
+    public static boolean check_email(String email) {
+        if (email.matches("([A-Za-z0-9]{1,}[\\-]{0,1}[A-Za-z0-9]{1,}[\\.]{0,1}[A-Za-z0-9]{1,})+")) return true;
+        else return false;
     }
 }

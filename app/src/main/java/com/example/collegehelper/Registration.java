@@ -2,6 +2,7 @@ package com.example.collegehelper;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import com.example.collegehelper.WorkWithData;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.collegehelper.WorkWithData.checkLetter;
+import static com.example.collegehelper.WorkWithData.check_email;
 import static com.example.collegehelper.WorkWithData.getLastID;
 import static com.example.collegehelper.WorkWithData.mDb;
 
@@ -24,6 +27,7 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();     //Убирает заголовок приложения (некрасивая cтрочка сверху)
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.registration);
     }
 
@@ -84,18 +88,13 @@ public class Registration extends AppCompatActivity {
             } else openActivity = 0;
 
             /**ПРОВЕРКА ПОЛЯ ПОЧТЫ НА ПРАВИЛЬНО ВВВЕДННОЕ ЗНАЧЕНИЕ*/
-            int i = 0;
-            if (i == 0) {
-                for (char letter : Email.toCharArray()) {
-                    if (!Character.isLetter(letter)) {
-                        openActivity++;
-                        i++;
-                    }
-                }
+            if (check_email(Email)) openActivity = 0;
+            else {
+                openActivity++;
+                Toast.makeText(getApplicationContext(),
+                        "Поле E-mail не должно содержать спец.символов или русских букв, а также бфть короче 3 символов",
+                        Toast.LENGTH_SHORT).show();
             }
-            if (i > 0) Toast.makeText(getApplicationContext(),
-                    "Поле E-mail не должно содержать спец.символов",
-                    Toast.LENGTH_SHORT).show();
 
             if (openActivity == 0) {
                 /**ПРОВЕРКА НА НАЛИЧИЕ ПРОБЕЛА В ПОЛЯХ*/
@@ -113,17 +112,30 @@ public class Registration extends AppCompatActivity {
                     openActivity++;
                 } else {
                     openActivity = 0;
-
-                    if (WorkWithData.isExist(Login)) openActivity++;
-                    else {
-                        /**ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ*/
-                        if (Password.equals(Password2)) openActivity = 0;
+                    if (!checkLetter(Login)) {
+                        if (WorkWithData.isExist(Login)) openActivity++;
                         else {
-                            openActivity++;
-                            Toast.makeText(getApplicationContext(),
-                                    "Пароли должны совпадать",
-                                    Toast.LENGTH_SHORT).show();
+                            /**ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ*/
+                            if (!checkLetter(Password)) {
+                                if (Password.equals(Password2)) openActivity = 0;
+                                else {
+                                    openActivity++;
+                                    Toast.makeText(getApplicationContext(),
+                                            "Пароли должны совпадать",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                openActivity++;
+                                Toast.makeText(getApplicationContext(),
+                                        "Пароль не должен содержать спец.символов",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
+                    } else {
+                        openActivity++;
+                        Toast.makeText(getApplicationContext(),
+                                "Логин не должен содержать русских букв",
+                                Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -143,12 +155,9 @@ public class Registration extends AppCompatActivity {
     /**Запись пользователя в БД*/
     public void addUser() {
         WorkWithData.ConnectToDB(this);
-
         mDb.beginTransaction();
 
-
         int last_id = getLastID("users_info");
-
 // Создайте новую строку со значениями для вставки.
         ContentValues registrationValues = new ContentValues();
         ContentValues infoPeopleValues = new ContentValues();

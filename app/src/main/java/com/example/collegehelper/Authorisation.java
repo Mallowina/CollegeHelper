@@ -1,6 +1,9 @@
 package com.example.collegehelper;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -19,20 +22,77 @@ import static com.example.collegehelper.WorkWithData.ID;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
+
 public class Authorisation extends AppCompatActivity {
     private String Login, Password;
     private String CurrentLogin=""; // название
     private String CurrentPassword="";
 
+    private EditText editLogin;
+    private EditText editPass;
+
+    SharedPreferences sPref;
+    public static final String keyLogin = "login";
+    public static final String keyPassword = "password";
+    public static final String myPrefs = "myprefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.autoriz);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         WorkWithData.ConnectToDB(this);
+
+        editLogin = (EditText) findViewById(R.id.editLogin);
+        editPass = (EditText) findViewById(R.id.editPassword2);
+
+        // при старте проверяем есть ли в файлах настроек
+        // данные по ключу nameKey
+        sPref = getSharedPreferences(myPrefs, Context.MODE_PRIVATE);
+        if (sPref.contains(keyLogin) && sPref.contains(keyPassword)) {
+            // если есть, то ставим значение этого ключа в EditText
+            Login = sPref.getString(keyLogin, "");
+            Password = sPref.getString(keyPassword, "");
+            try {
+                Password = WorkWithData.byteArrayToHexString(WorkWithData.computeHash(Password));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            boolean trLogin = isEqualsLogin(), trPassword = isEqualsPassword();
+            if (trLogin && trPassword) {
+                WorkWithData.getUser();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            }
+        }
     }
 
+    void saveText() {
+        Password = editPass.getText().toString();
+
+        // получаем доступ к файлу
+        SharedPreferences.Editor editor = sPref.edit();
+        // сохраняем по текст из EditText по ключу nameKey
+        editor.putString(keyLogin, Login);
+        editor.putString(keyPassword, Password);
+        editor.apply();
+    }
+
+//    void getText() {
+//        sPref = getSharedPreferences(myPrefs, Context.MODE_PRIVATE);
+//        if (sPref.contains(keyLogin) && sPref.contains(keyPassword)) {
+//            Login = sPref.getString(keyLogin, "");
+//            Password = sPref.getString(keyPassword, "");
+//        }
+//    }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        loadText();
+//    }
 
     public void openreg(View view) {
         // действия, совершаемые после нажатия на кнопку
@@ -46,9 +106,8 @@ public class Authorisation extends AppCompatActivity {
         int openActivity = 0;
 
         /**ПОЛУЧЕНИЕ ДАННЫХ В ПЕРЕМЕННЫЕ*/
-        EditText editLogin = (EditText) findViewById(R.id.editLogin);
+
         Login = editLogin.getText().toString().trim();
-        EditText editPass = (EditText) findViewById(R.id.editPassword2);
         Password = editPass.getText().toString().trim();
 
 
@@ -99,10 +158,11 @@ public class Authorisation extends AppCompatActivity {
         if (openActivity == 0) {
             WorkWithData.getUser();
 
-//            Toast.makeText(getApplicationContext(),
-//                    "You " + ID + NAME + SURNAME + SECOND_NAME+ COURSE_NAME + GROUP_NAME + EMAIL,
-//                    Toast.LENGTH_SHORT).show();
+            saveText();
 
+            editLogin.setText("");
+            editPass.setText("");
+            
             // Создаем объект Intent для вызова новой Activity
             Intent intent = new Intent(this, MainActivity.class);
             // запуск activity
