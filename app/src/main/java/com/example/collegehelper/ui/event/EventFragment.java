@@ -12,6 +12,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.collegehelper.R;
 
+import static com.example.collegehelper.WorkWithData.UserType;
+
 public class EventFragment extends Fragment {
 
     private View root;
@@ -24,11 +26,15 @@ public class EventFragment extends Fragment {
 
         Fragment addEvent = new AddEventFragment();
         Fragment Event = new EventActionFragment();
+
         FragmentTransaction trans = getFragmentManager().beginTransaction();
         trans.replace(R.id.event, Event);
         trans.commit();
 
         Button btnAddEvent = (Button) root.findViewById(R.id.btnAddEvent);
+
+        if (UserType.equals("1")) btnAddEvent.setVisibility(View.GONE);
+
         btnAddEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

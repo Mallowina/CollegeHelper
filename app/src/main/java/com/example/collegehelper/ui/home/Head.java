@@ -15,7 +15,7 @@ public class Head extends AppCompatActivity {
 
         /**Имя и фамилия в голове*/
         String Name = "sda";
-        TextView textView = findViewById(R.id.Name_in_head);
+        TextView textView = findViewById(R.id.viewFIO);
         // задаём текст
         textView.setText(Name);
 

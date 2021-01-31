@@ -18,6 +18,7 @@
             android:layout_height="42dp"
             android:layout_marginTop="55dp"
             android:text="Основное расписание"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,15 +28,15 @@
             android:id="@+id/ismenn"
             android:layout_width="372dp"
             android:layout_height="40dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="55dp"
             android:text="Изменения в расписании"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/raspp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/spinnerGroupRegistration"
+            android:id="@+id/spinnerGroupSchedule"
             android:layout_width="109dp"
             android:layout_height="30dp"
             android:layout_marginTop="12dp"
@@ -49,13 +50,13 @@
             android:id="@+id/layoutt"
             android:layout_width="376dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGroupRegistration">
+            app:layout_constraintTop_toBottomOf="@+id/ismenn">
 
             <TableLayout
                 android:id="@+id/table"
@@ -89,9 +90,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="1"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -100,7 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -112,9 +111,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="2"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -123,7 +120,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -136,9 +133,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="3"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -147,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -160,9 +155,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="4"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -171,7 +164,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -184,9 +177,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="5"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -195,7 +186,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -208,9 +199,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="6"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -219,7 +208,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -249,9 +238,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="1"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -260,7 +247,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -273,9 +260,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="2"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -284,7 +269,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -297,9 +282,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="3"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -308,7 +291,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -321,9 +304,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="4"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -332,7 +313,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -345,9 +326,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="5"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -356,7 +335,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -369,9 +348,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="6"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -380,7 +357,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -410,9 +387,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="1"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -421,7 +396,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -434,9 +409,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="2"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -445,7 +418,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -458,9 +431,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="3"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -469,7 +440,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -482,9 +453,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="4"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -493,7 +462,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -506,9 +475,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="5"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -517,7 +484,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -530,9 +497,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="6"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -541,7 +506,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -571,9 +536,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="1"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -582,7 +545,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -595,9 +558,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="2"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -606,7 +567,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -619,9 +580,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="3"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -630,7 +589,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -643,9 +602,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="4"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -654,7 +611,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -667,9 +624,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="5"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -678,7 +633,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -691,9 +646,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="6"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -702,7 +655,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -732,9 +685,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="1"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -743,7 +694,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -756,9 +707,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="2"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -767,7 +716,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -780,9 +729,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="3"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -791,7 +738,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -804,9 +751,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="4"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -815,7 +760,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -828,9 +773,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="5"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 
@@ -839,7 +782,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -852,19 +795,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:password="false"
                         android:text="6"
-                        android:textAlignment="viewStart"
                         android:textColor="#000000"
-                        android:textStyle="bold"
-                        android:visibility="gone" />
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/er6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
             </TableLayout>
@@ -874,13 +814,13 @@
             android:id="@+id/layoutt1"
             android:layout_width="373dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerGroupRegistration">
+            app:layout_constraintTop_toBottomOf="@id/ismenn">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -897,7 +837,7 @@
                         android:layout_height="wrap_content"
                         android:text="Понедельник"
                         android:textColor="#000000"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                 </TableRow>
@@ -920,7 +860,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -941,7 +881,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -962,7 +902,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -983,7 +923,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -1004,7 +944,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -1025,7 +965,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -1039,7 +979,7 @@
                         android:layout_height="wrap_content"
                         android:text="Вторник"
                         android:textColor="#000000"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                 </TableRow>
@@ -1062,7 +1002,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -1083,7 +1023,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -1104,7 +1044,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -1125,7 +1065,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
                 </TableRow>
 
                 <TableRow
@@ -1146,7 +1086,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
 
@@ -1168,7 +1108,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Введите название предмета"
-                        android:textSize="10sp" />
+                        android:textSize="15dp" />
 
                 </TableRow>
             </TableLayout>
@@ -1179,6 +1119,7 @@
             android:layout_width="115dp"
             android:layout_height="49dp"
             android:text="Создать"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.948"
             app:layout_constraintStart_toStartOf="parent"

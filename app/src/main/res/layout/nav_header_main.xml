@@ -21,13 +21,14 @@
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
-        android:id="@+id/Name_in_head"
+        android:id="@+id/viewFIO"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Имя" />
+        android:text="@string/nav_header_title"/>
+
 
     <TextView
-        android:id="@+id/Famili_in_head"
+        android:id="@+id/viewMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Фамилия" />

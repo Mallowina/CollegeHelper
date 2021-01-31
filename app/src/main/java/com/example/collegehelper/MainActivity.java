@@ -1,6 +1,6 @@
-package com.example.collegehelper;
+git package com.example.collegehelper;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.collegehelper.ui.schedule.ScheduleFragment;
+
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -18,8 +18,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.jar.Attributes;
+import static com.example.collegehelper.WorkWithData.SURNAME;
+import static com.example.collegehelper.WorkWithData.NAME;
+import static com.example.collegehelper.WorkWithData.SECOND_NAME;
+import static com.example.collegehelper.WorkWithData.EMAIL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        View hView =  navigationView.getHeaderView(0);
+        TextView nav_user = (TextView)hView.findViewById(R.id.viewFIO);
+        TextView nav_mail = (TextView)hView.findViewById(R.id.viewMail);
+        String user = SURNAME + " " + NAME + " " + SECOND_NAME;     //ВЫВОД ИМЕНИ ПОЛЬЗОВАТЕЛЯ
+        nav_user.setText(user);
+        nav_mail.setText(EMAIL);                                    //ВЫВОД ПОЧТЫ ПОЛЬЗОВАТЕЛЯ
 
         /**СКРЫТИЕ ЭЛЕМЕНТА В ШТОРКЕ*/
 //        Menu menu = navigationView.getMenu();

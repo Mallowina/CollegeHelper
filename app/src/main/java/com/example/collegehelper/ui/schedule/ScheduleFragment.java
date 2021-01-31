@@ -12,6 +12,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.collegehelper.R;
 
+import static com.example.collegehelper.WorkWithData.UserType;
+
 public class ScheduleFragment extends Fragment {
 
     private View root;
@@ -28,19 +30,32 @@ public class ScheduleFragment extends Fragment {
         trans.commit();
 
         Button showSchedule = root.findViewById(R.id.showSchedule);
+        Button addSchedule = root.findViewById(R.id.addSchedule);
+
+        if (!UserType.equals("3")) {
+            showSchedule.setVisibility(View.GONE);
+            addSchedule.setVisibility(View.GONE);
+        }
+
+
+
         showSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showSchedule.setVisibility(View.INVISIBLE);
+                addSchedule.setVisibility(View.VISIBLE);
                 FragmentTransaction trans1 = getFragmentManager().beginTransaction();
                 trans1.replace(R.id.ChangeSchedule, ShowSchedule);
                 trans1.commit();
             }
         });
 
-        Button addSchedule = root.findViewById(R.id.addSchedule);
+
         addSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showSchedule.setVisibility(View.VISIBLE);
+                addSchedule.setVisibility(View.INVISIBLE);
                 FragmentTransaction trans2 = getFragmentManager().beginTransaction();
                 trans2.replace(R.id.ChangeSchedule, AddSchedule);
                 trans2.commit();
